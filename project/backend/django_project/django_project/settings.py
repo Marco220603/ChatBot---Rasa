@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rasita',       # Nombre de la base de datos
+        'USER': 'postgres',           # Nombre de usuario
+        'PASSWORD': '123',   # Contraseña del usuario
+        'HOST': 'localhost',        # Host de la base de datos
+        'PORT': '5432',             # Puerto de PostgreSQL (por defecto es 5432)
     }
 }
 
