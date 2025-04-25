@@ -1,0 +1,37 @@
+version: "3.1"
+
+intents:
+  - bienvenida
+  - objetivos_curso
+  - competencias_curso
+  - horario_curso
+  - creditos_curso
+  - fechas_entrega
+  - problemas_tecnicos
+  - usuario_cambia_tema
+  - usuario_pregunta_fuera_tema
+  - usuario_se_desvia_y_vuelve
+  - despedida
+  - usuario_pregunta_fuera_del_tema
+
+
+actions:
+  - action_bienvenida
+  - action_mostrar_menu
+  - action_objetivos_curso
+  - action_competecias_curso
+  - action_horario_curso
+  - action_creditos_curso
+  - action_fechas_entrega
+  - action_problemas_tecnicos
+  - action_usuario_cambia_tema
+  - action_usuario_pregunta_fuera_tema
+  - action_usuario_se_desvia_y_vuelve
+  - action_fallback_ia
+  - action_competencias_curso
+  - action_despedida
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

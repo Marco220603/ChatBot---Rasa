@@ -1,0 +1,184 @@
+version: "3.1"
+
+nlu:
+# 🔹 INTENCIONES (INTENTS)
+- intent: bienvenida
+  examples: |
+    - Hola
+    - Buenos días
+    - buenos dias
+    - holi
+    - hola
+    - buenas
+    - ola
+    - hola, que tal?
+    - hola,que tal?
+    - buen dia
+    - buen día
+    - buenas tardes
+    - Buentas Tardes
+    - Buenas tardes
+    - Buenas Noches
+    - BUENAS
+    - Buenas noches
+    - buenas noches
+    - que tal?
+    - saludos
+
+
+    
+- intent: objetivos_curso
+  examples: |
+    - ¿Cuáles son los objetivos del curso [Taller de Proyecto I](nombre_curso)?
+    - ¿Qué busca lograr el curso [Taller de Proyecto II](nombre_curso)?
+    - ¿Cuál es el propósito de los talleres de proyecto?
+    - ¿Qué aprenderé en el [Taller de Proyecto I](nombre_curso)?
+    - ¿Qué conocimientos adquiriré en el [Taller de Proyecto II](nombre_curso)?
+
+- intent: competencias_curso
+  examples: |
+    - ¿Qué competencias se desarrollan en los talleres de proyecto?
+    - ¿Cuáles son las habilidades que adquiriré en el [Taller de Proyecto I](nombre_curso)?
+    - ¿Qué competencias específicas se trabajan en el [Taller de Proyecto II](nombre_curso)?
+    - ¿Qué nivel de competencias se alcanza en estos cursos?
+    - ¿En qué competencias se enfoca el [Taller de Proyecto I](nombre_curso)?
+
+- intent: horario_curso
+  examples: |
+    - ¿Cuál es el horario del [Taller de Proyecto I](nombre_curso)?
+    - ¿Cuántas horas de clase tiene el [Taller de Proyecto II](nombre_curso)?
+    - ¿Cuántas sesiones de laboratorio tiene el curso?
+    - ¿Cuánto dura el [Taller de Proyecto I](nombre_curso)?
+    - ¿Cuáles son los días de clase de estos cursos?
+
+- intent: creditos_curso
+  examples: |
+    - ¿Cuántos créditos tiene el [Taller de Proyecto I](nombre_curso)?
+    - ¿Cuántos créditos necesito para completar estos cursos?
+    - ¿El [Taller de Proyecto II](nombre_curso) tiene la misma cantidad de créditos que el I?
+
+- intent: fechas_entrega
+  examples: |
+    - ¿Cuándo es la entrega del [Trabajo Final](tipo_evaluacion)?
+    - ¿Cuál es la fecha límite para el [Trabajo Parcial](tipo_evaluacion)?
+    - ¿Hasta qué semana puedo presentar [Participación](tipo_evaluacion)?
+    - ¿Las fechas de entrega son flexibles?
+    - ¿Dónde puedo ver el cronograma del curso?
+
+- intent: problemas_tecnicos
+  examples: |
+    - ¿Qué hacer si tengo problemas técnicos en [Blackboard](plataforma)?
+    - ¿Cómo reporto un error en [Aula Virtual](plataforma)?
+    - ¿Qué pasa si no puedo acceder a la clase virtual?
+    - ¿A quién puedo contactar si tengo problemas con [Microsoft Teams](plataforma)?
+- intent: usuario_cambia_tema
+  examples: |
+    - Quiero hablar de otra cosa
+    - Cambiemos de tema
+- intent: despedida
+  examples: |
+    - Chau
+    - Adiós
+    - Hasta luego
+    - Nos vemos
+    - Me voy
+    - Hasta pronto
+    - Gracias, eso era todo
+    - Cuídate
+    - Que tengas un buen día
+# 🔹 ENTIDADES DEFINIDAS (con sinónimos)
+- synonym: Taller de Proyecto I
+  examples: |
+    - TP I
+    - Proyecto I
+    - Taller I
+
+- synonym: Taller de Proyecto II
+  examples: |
+    - TP II
+    - Proyecto II
+    - Taller II
+
+- synonym: Blackboard
+  examples: |
+    - BB
+    - Plataforma Blackboard
+    - Sistema Blackboard
+
+- synonym: Aula Virtual
+  examples: |
+    - AV
+    - Plataforma Virtual
+    - Aula UPC
+
+- synonym: Microsoft Teams
+  examples: |
+    - Teams
+    - MS Teams
+    - Plataforma Teams
+
+- synonym: Trabajo Final
+  examples: |
+    - TF
+    - Informe final
+    - Proyecto final
+
+- synonym: Trabajo Parcial
+  examples: |
+    - TP
+    - Parcial
+    - Evaluación parcial
+
+- synonym: Participación
+  examples: |
+    - PA
+    - Asistencia activa
+    - Interacción en clase
+
+# 🔹 LOOKUP TABLES (para mejorar precisión en valores fijos)
+- lookup: nombre_curso
+  examples: |
+    - Taller de Proyecto I
+    - Taller de Proyecto II
+    - TP I
+    - TP II
+    - Proyecto I
+    - Proyecto II
+
+- lookup: tipo_evaluacion
+  examples: |
+    - Trabajo Final
+    - Trabajo Parcial
+    - Participación
+    - Sustentación
+
+- lookup: plataforma
+  examples: |
+    - Blackboard
+    - Aula Virtual
+    - Microsoft Teams
+
+- lookup: rol
+  examples: |
+    - Líder de equipo
+    - Analista
+    - Diseñador
+    - Desarrollador
+    - Tester
+    - Coordinador
+
+- lookup: etapa_proyecto
+  examples: |
+    - Definición de objetivos
+    - Alcance
+    - Plan de trabajo
+    - Diseño
+    - Implementación
+    - Sustentación
+
+- lookup: fecha_entrega
+  examples: |
+    - Semana 9
+    - Semana 15
+    - Semana 16
+    - Plazo final

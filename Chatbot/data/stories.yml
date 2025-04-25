@@ -1,0 +1,79 @@
+version: "3.1"
+
+stories:
+
+- story: usuario_saluda_y_ve_menu
+  steps:
+  - intent: bienvenida
+  - action: action_bienvenida
+  - action: action_mostrar_menu
+
+- story: usuario_se_despide
+  steps:
+  - intent: despedida
+  - action: action_despedida
+
+# 🔹 Escenario 1: Consulta sobre los objetivos del curso
+- story: preguntar_objetivos_curso
+  steps:
+  - intent: objetivos_curso
+  - action: action_objetivos_curso
+
+# 🔹 Escenario 2: Consulta sobre competencias del curso
+- story: preguntar_competencias
+  steps:
+  - intent: competencias_curso
+  - action: action_competencias_curso
+
+# 🔹 Escenario 3: Consulta sobre el horario del curso
+- story: preguntar_horario
+  steps:
+  - intent: horario_curso
+  - action: action_horario_curso
+
+# 🔹 Escenario 4: Consulta sobre créditos del curso
+- story: preguntar_creditos
+  steps:
+  - intent: creditos_curso
+  - action: action_creditos_curso
+
+# 🔹 Escenario 5: Pregunta sobre fechas de entrega
+- story: preguntar_fechas_entrega
+  steps:
+  - intent: fechas_entrega
+  - action: action_fechas_entrega
+
+# 🔹 Escenario 6: Problemas técnicos
+- story: problemas_tecnicos
+  steps:
+  - intent: problemas_tecnicos
+  - action: action_problemas_tecnicos
+
+# 🔹 Escenario 7: Usuario cambia de tema durante la conversación
+- story: usuario_cambia_tema
+  steps:
+  - intent: objetivos_curso
+  - action: action_objetivos_curso
+  - intent: problemas_tecnicos
+  - action: action_problemas_tecnicos
+  - intent: fechas_entrega
+  - action: action_fechas_entrega
+
+# 🔹 Escenario 8: Usuario pregunta algo fuera del tema
+- story: usuario_pregunta_fuera_del_tema
+  steps:
+  - intent: horario_curso
+  - action: action_horario_curso
+  - intent: problemas_tecnicos
+  - action: action_problemas_tecnicos
+
+# 🔹 Escenario 9: Usuario se desvía y regresa al tema
+- story: usuario_se_desvia_y_vuelve
+  steps:
+  - intent: creditos_curso
+  - action: action_creditos_curso
+  - intent: fechas_entrega
+  - action: action_fechas_entrega
+  - intent: objetivos_curso
+  - action: action_objetivos_curso
+

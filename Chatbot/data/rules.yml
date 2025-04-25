@@ -1,0 +1,75 @@
+version: "3.1"
+
+rules:
+
+
+- rule: Mostrar menú después de la bienvenida
+  steps:
+  - intent: bienvenida
+  - action: action_bienvenida
+  - action: action_mostrar_menu
+
+
+- rule: Responder cuando el usuario se despide
+  steps:
+  - intent: despedida
+  - action: action_despedida
+
+- rule: Responder con los objetivos del curso
+  steps:
+  - intent: objetivos_curso
+  - action: action_objetivos_curso
+
+
+- rule: Responder con las competencias del curso
+  steps:
+  - intent: competencias_curso
+  - action: action_competencias_curso
+
+
+- rule: Responder con el horario del curso
+  steps:
+  - intent: horario_curso
+  - action: action_horario_curso
+
+
+- rule: Responder con los créditos del curso
+  steps:
+  - intent: creditos_curso
+  - action: action_creditos_curso
+
+
+- rule: Responder con las fechas de entrega
+  steps:
+  - intent: fechas_entrega
+  - action: action_fechas_entrega
+
+
+- rule: Responder sobre problemas técnicos
+  steps:
+  - intent: problemas_tecnicos
+  - action: action_problemas_tecnicos
+
+
+- rule: Manejar cambio de tema durante la conversación
+  steps:
+  - intent: usuario_cambia_tema
+  - action: action_objetivos_curso
+  - action: action_problemas_tecnicos
+  - action: action_fechas_entrega
+
+
+- rule: Manejar cuando el usuario pregunta algo fuera del tema
+  steps:
+  - intent: usuario_pregunta_fuera_del_tema
+  - action: action_horario_curso
+  - action: action_problemas_tecnicos
+
+
+- rule: Manejar cuando el usuario se desvía y regresa al tema
+  steps:
+  - intent: usuario_se_desvia_y_vuelve
+  - action: action_creditos_curso
+  - action: action_fechas_entrega
+  - action: action_objetivos_curso
+
