@@ -1,0 +1,54 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "competencias_curso": 1,
+        "creditos_curso": 2,
+        "fechas_entrega": 3,
+        "horario_curso": 4,
+        "nlu_fallback": 5,
+        "objetivos_curso": 6,
+        "out_of_scope": 7,
+        "problemas_tecnicos": 8,
+        "restart": 9,
+        "session_start": 10,
+        "usuario_cambia_tema": 11,
+        "usuario_pregunta_fuera_tema": 12,
+        "usuario_se_desvia_y_vuelve": 13
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_competencias_curso": 13,
+        "utter_creditos_curso": 14,
+        "utter_fechas_entrega": 15,
+        "utter_horario_curso": 16,
+        "utter_objetivos_curso": 17,
+        "utter_problemas_tecnicos": 18,
+        "utter_usuario_cambia_tema": 19,
+        "utter_usuario_pregunta_fuera_tema": 20,
+        "utter_usuario_se_desvia_y_vuelve": 21
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}
