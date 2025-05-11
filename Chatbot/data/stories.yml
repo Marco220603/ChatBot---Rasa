@@ -5,7 +5,6 @@ stories:
 - story: usuario_saluda_y_ve_menu
   steps:
   - intent: bienvenida
-  - action: action_bienvenida
   - action: action_mostrar_menu
 
 - story: usuario_se_despide
@@ -77,3 +76,12 @@ stories:
   - intent: objetivos_curso
   - action: action_objetivos_curso
 
+- story: usuario_pregunta_sobre_cambio_titulo
+  steps:
+  - intent: cambio_titulo
+  - action: action_procedimiento_cambio_titulo
+
+- story: consulta_no_establecida
+  steps:
+  - action: action_fallback_to_ollama
+  - action: action_feedback_satisfaction

@@ -25,8 +25,6 @@ nlu:
     - que tal?
     - saludos
 
-
-    
 - intent: objetivos_curso
   examples: |
     - ¿Cuáles son los objetivos del curso [Taller de Proyecto I](nombre_curso)?
@@ -86,6 +84,15 @@ nlu:
     - Gracias, eso era todo
     - Cuídate
     - Que tengas un buen día
+    
+- intent: cambio_titulo
+  examples: |
+    - titulo
+    - quiero cambiar el titulo del proyecto
+    - cómo cambio el titulo del proyecto
+    - modificar titulo 
+    - cambio de titulo
+
 # 🔹 ENTIDADES DEFINIDAS (con sinónimos)
 - synonym: Taller de Proyecto I
   examples: |

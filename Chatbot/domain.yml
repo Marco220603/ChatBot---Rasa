@@ -9,14 +9,21 @@ intents:
   - fechas_entrega
   - problemas_tecnicos
   - usuario_cambia_tema
-  - usuario_pregunta_fuera_tema
-  - usuario_se_desvia_y_vuelve
   - despedida
-  - usuario_pregunta_fuera_del_tema
+  - nlu_fallback
+  - cambio_titulo
 
+slots:
+  last_user_message:
+    type: text
+    mappings:
+      - type: custom
+  last_bot_response:
+    type: text
+    mappings:
+      - type: custom
 
 actions:
-  - action_bienvenida
   - action_mostrar_menu
   - action_objetivos_curso
   - action_competecias_curso
@@ -27,10 +34,11 @@ actions:
   - action_usuario_cambia_tema
   - action_usuario_pregunta_fuera_tema
   - action_usuario_se_desvia_y_vuelve
-  - action_fallback_ia
   - action_competencias_curso
   - action_despedida
-  
+  - action_fallback_to_ollama
+  - action_feedback_satisfaction 
+  - action_procedimiento_cambio_titulo
 
 session_config:
   session_expiration_time: 60
