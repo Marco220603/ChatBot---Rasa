@@ -1,0 +1,45 @@
+version: "3.1"
+
+intents:
+  - bienvenida
+  - objetivos_curso
+  - competencias_curso
+  - horario_curso
+  - creditos_curso
+  - fechas_entrega
+  - problemas_tecnicos
+  - usuario_cambia_tema
+  - despedida
+  - nlu_fallback
+  - cambio_titulo
+
+slots:
+  last_user_message:
+    type: text
+    mappings:
+      - type: custom
+  last_bot_response:
+    type: text
+    mappings:
+      - type: custom
+
+actions:
+  - action_mostrar_menu
+  - action_objetivos_curso
+  - action_competecias_curso
+  - action_horario_curso
+  - action_creditos_curso
+  - action_fechas_entrega
+  - action_problemas_tecnicos
+  - action_usuario_cambia_tema
+  - action_usuario_pregunta_fuera_tema
+  - action_usuario_se_desvia_y_vuelve
+  - action_competencias_curso
+  - action_despedida
+  - action_fallback_to_ollama
+  - action_feedback_satisfaction 
+  - action_procedimiento_cambio_titulo
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

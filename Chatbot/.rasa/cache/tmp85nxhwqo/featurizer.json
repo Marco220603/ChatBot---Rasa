@@ -1,0 +1,64 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "bienvenida": 1,
+        "cambio_titulo": 2,
+        "competencias_curso": 3,
+        "creditos_curso": 4,
+        "despedida": 5,
+        "fechas_entrega": 6,
+        "horario_curso": 7,
+        "nlu_fallback": 8,
+        "objetivos_curso": 9,
+        "out_of_scope": 10,
+        "problemas_tecnicos": 11,
+        "restart": 12,
+        "session_start": 13,
+        "usuario_cambia_tema": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_mostrar_menu": 13,
+        "action_objetivos_curso": 14,
+        "action_competecias_curso": 15,
+        "action_horario_curso": 16,
+        "action_creditos_curso": 17,
+        "action_fechas_entrega": 18,
+        "action_problemas_tecnicos": 19,
+        "action_usuario_cambia_tema": 20,
+        "action_usuario_pregunta_fuera_tema": 21,
+        "action_usuario_se_desvia_y_vuelve": 22,
+        "action_competencias_curso": 23,
+        "action_despedida": 24,
+        "action_fallback_to_ollama": 25,
+        "action_feedback_satisfaction": 26,
+        "action_procedimiento_cambio_titulo": 27
+      },
+      "entities": {},
+      "slots": {
+        "last_user_message_0": 0,
+        "last_bot_response_0": 1
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

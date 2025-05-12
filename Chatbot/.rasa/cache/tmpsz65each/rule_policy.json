@@ -1,0 +1,48 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"objetivos_curso\"}}]": "utter_objetivos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"objetivos_curso\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"objetivos_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"horario_curso\"}}]": "utter_horario_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"horario_curso\"}}, {\"prev_action\": {\"action_name\": \"utter_horario_curso\"}, \"user\": {\"intent\": \"horario_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}]": "utter_horario_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_horario_curso\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}]": "utter_problemas_tecnicos",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_horario_curso\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"competencias_curso\"}}]": "utter_competencias_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"competencias_curso\"}}, {\"prev_action\": {\"action_name\": \"utter_competencias_curso\"}, \"user\": {\"intent\": \"competencias_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]": "utter_objetivos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]": "utter_problemas_tecnicos",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]": "utter_fechas_entrega",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"problemas_tecnicos\"}}]": "utter_problemas_tecnicos",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"problemas_tecnicos\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"problemas_tecnicos\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]": "utter_creditos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]": "utter_fechas_entrega",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]": "utter_objetivos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"creditos_curso\"}}]": "utter_creditos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"creditos_curso\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"creditos_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fechas_entrega\"}}]": "utter_fechas_entrega",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fechas_entrega\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"fechas_entrega\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_horario_curso\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_horario_curso\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"usuario_pregunta_fuera_del_tema\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}, {\"prev_action\": {\"action_name\": \"utter_creditos_curso\"}, \"user\": {\"intent\": \"usuario_se_desvia_y_vuelve\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_objetivos_curso\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_problemas_tecnicos\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}, {\"prev_action\": {\"action_name\": \"utter_fechas_entrega\"}, \"user\": {\"intent\": \"usuario_cambia_tema\"}}]"
+    ]
+  }
+}
