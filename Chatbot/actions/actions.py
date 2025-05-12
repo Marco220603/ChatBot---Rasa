@@ -5,6 +5,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 import json
 import sqlite3
+from .feedback_rag import FeedbackRAG
 DJANGO_API_URL = "http://localhost:8000/api/feedbackgpt/"  
 OLLAMA_URL = "http://localhost:11434/api/generate"  
  
@@ -13,17 +14,33 @@ class ActionFallbackToOllama(Action):
         return "action_fallback_to_ollama"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict):
-
         user_message = tracker.latest_message.get('text')
+        print(f"➡️ Recibido mensaje del usuario: {user_message}")
 
-        # Mostrar mensaje que se va a enviar a Ollama
+        # Paso 1: Buscar en FAISS
+        rag = FeedbackRAG()
+        respuesta_guardada = rag.search(user_message)
+
+        if respuesta_guardada:
+            print("✅ Respuesta encontrada en base de datos local")
+            dispatcher.utter_message(text=respuesta_guardada)
+            dispatcher.utter_message(text="¿Esta respuesta resolvió tu duda? (Responde: Sí o No)")
+            return [
+                SlotSet("last_user_message", user_message),
+                SlotSet("last_bot_response", respuesta_guardada)
+            ]
+
+        # Paso 2: Si no hay respuesta, llamar a Ollama
         print(f"➡️ Enviando mensaje a Ollama: {user_message}")
-
-        # Llamar a OLLAMA
         payload = {
             "model": "llama3:8b",
-            "prompt": f"Eres un asistente académico de la Universidad Peruana de Ciencias Aplicadas (UPC). Solo responde preguntas relacionadas con tesis, talleres de proyecto, y normativa académica de la universidad peruana de ciencias aplicadas. Si la pregunta no está relacionada, indica que no puedes responder. Pregunta: {user_message}\nRespuesta:",
-            "stream": False  # Asegúrate de desactivarlo si es necesario
+            "prompt": (
+                "Eres un asistente académico de la Universidad Peruana de Ciencias Aplicadas (UPC). "
+                "Solo responde preguntas relacionadas con tesis, talleres de proyecto, y normativa académica de la UPC. "
+                "Si la pregunta no está relacionada, indica que no puedes responder.\n"
+                f"Pregunta: {user_message}\nRespuesta:"
+            ),
+            "stream": False
         }
 
         try:
@@ -32,21 +49,18 @@ class ActionFallbackToOllama(Action):
             gpt_response = json.loads(response.text.split('\n')[0])['response']
 
             print(f"✅ Respuesta de Ollama: {gpt_response.strip()}")
-
-            # Mostrar respuesta
             dispatcher.utter_message(text=gpt_response)
             dispatcher.utter_message(text="¿Esta respuesta resolvió tu duda? (Responde: Sí o No)")
-
             return [
                 SlotSet("last_user_message", user_message),
                 SlotSet("last_bot_response", gpt_response)
             ]
 
         except Exception as e:
-            dispatcher.utter_message(text="Lo siento, no pude obtener una respuesta en este momento. Por favor intenta más tarde.")
             print(f"❌ Error en llamada a Ollama: {e}")
+            dispatcher.utter_message(text="Lo siento, no pude obtener una respuesta en este momento. Por favor intenta más tarde.")
             return []
-    
+        
 class ActionFeedbackSatisfaction(Action):
     def name(self):
         return "action_feedback_satisfaction"
