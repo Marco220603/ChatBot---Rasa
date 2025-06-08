@@ -2,16 +2,6 @@ version: "3.1"
 
 rules:
 
-- rule: Mostrar menú después de la bienvenida
-  steps:
-  - intent: bienvenida
-  - action: action_mostrar_menu
-
-- rule: Responder cuando el usuario se despide
-  steps:
-  - intent: despedida
-  - action: action_despedida
-
 - rule: Responder con los objetivos del curso
   steps:
   - intent: objetivos_curso

@@ -2,16 +2,6 @@ version: "3.1"
 
 stories:
 
-- story: usuario_saluda_y_ve_menu
-  steps:
-  - intent: bienvenida
-  - action: action_mostrar_menu
-
-- story: usuario_se_despide
-  steps:
-  - intent: despedida
-  - action: action_despedida
-
 # 🔹 Escenario 1: Consulta sobre los objetivos del curso
 - story: preguntar_objetivos_curso
   steps:
@@ -85,3 +75,13 @@ stories:
   steps:
   - action: action_fallback_to_ollama
   - action: action_feedback_satisfaction
+
+- story: consulta_sobre_objetivos_ISI
+  steps:
+  - intent: objetivos_proyectoISI
+  - action: action_formato_objetivosISI
+
+- story: consulta_sobre_objetivos_SW
+  steps:
+  - intent: objetivos_proyectoSW
+  - action: action_formato_objetivosSW

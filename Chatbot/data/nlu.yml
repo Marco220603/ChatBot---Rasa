@@ -2,28 +2,6 @@ version: "3.1"
 
 nlu:
 # 🔹 INTENCIONES (INTENTS)
-- intent: bienvenida
-  examples: |
-    - Hola
-    - Buenos días
-    - buenos dias
-    - holi
-    - hola
-    - buenas
-    - ola
-    - hola, que tal?
-    - hola,que tal?
-    - buen dia
-    - buen día
-    - buenas tardes
-    - Buentas Tardes
-    - Buenas tardes
-    - Buenas Noches
-    - BUENAS
-    - Buenas noches
-    - buenas noches
-    - que tal?
-    - saludos
 
 - intent: objetivos_curso
   examples: |
@@ -73,18 +51,6 @@ nlu:
   examples: |
     - Quiero hablar de otra cosa
     - Cambiemos de tema
-- intent: despedida
-  examples: |
-    - Chau
-    - Adiós
-    - Hasta luego
-    - Nos vemos
-    - Me voy
-    - Hasta pronto
-    - Gracias, eso era todo
-    - Cuídate
-    - Que tengas un buen día
-    
 - intent: cambio_titulo
   examples: |
     - titulo
@@ -92,6 +58,39 @@ nlu:
     - cómo cambio el titulo del proyecto
     - modificar titulo 
     - cambio de titulo
+- intent: objetivos_proyectoISI 
+  examples: |
+    - objetivo general de ingenieria de sistemas
+    - objetivo general de Ingeniería de Sistemas
+    - Objetivo General de Ingeniería de Sistemas
+    - obj general isi
+    - objetivo general de isi
+    - objetivos de isi
+    - objetivos de ISI
+    - objetivo especificos de ingenieria de sistemas
+    - objetivo especificos de Ingeniería de Sistemas
+    - Objetivo Específicos de Ingeniería de Sistemas
+    - obj especifico isi
+    - objetivo especifico de isi
+    - objetivos especificos de isi
+    - objetivos especificos de isi
+- intent: objetivos_proyectoSW
+  examples:  |
+    - objetivo general de ingenieria de sowftware
+    - objetivo general de Ingeniería de Software
+    - Objetivo General de Ingeniería de Software
+    - obj general sw
+    - objetivo general de sw
+    - objetivos de sw
+    - objetivos de sw
+    - objetivo especificos de ingenieria de sowftware
+    - objetivo especificos de Ingeniería de Software
+    - Objetivo Específicos de Ingeniería de Software
+    - obj especifico sw
+    - objetivo especifico de sw
+    - objetivos especificos de sw
+    - objetivos especificos de sw
+
 
 # 🔹 ENTIDADES DEFINIDAS (con sinónimos)
 - synonym: Taller de Proyecto I

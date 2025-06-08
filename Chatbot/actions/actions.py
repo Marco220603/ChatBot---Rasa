@@ -6,7 +6,7 @@ from rasa_sdk.events import SlotSet
 import json
 import sqlite3
 from .feedback_rag import FeedbackRAG
-DJANGO_API_URL = "http://localhost:8000/api/feedbackgpt/"  
+DJANGO_API_URL = "http://localhost:8000/api/feedbackgpt/" 
 OLLAMA_URL = "http://localhost:11434/api/generate"  
  
 class ActionFallbackToOllama(Action):
@@ -117,28 +117,6 @@ class BaseAction(Action):
         last_intent = tracker.latest_message.get('intent', {}).get('name', 'sin_clasificar')
         guardar_mensaje(sender_id, last_message, last_intent)
 
-class ActionMostrarMenu(BaseAction):
-    def name(self) -> Text:
-        return "action_mostrar_menu"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        menu = (
-            "📚 Estas son algunas cosas que puedo responder:\n"
-            "1⃣⃣ Objetivos del curso\n"
-            "2⃣⃣ Competencias del curso\n"
-            "3⃣⃣ Horarios\n"
-            "4⃣⃣ Créditos\n"
-            "5⃣⃣ Fechas de entrega\n"
-            "6⃣⃣ Problemas técnicos\n"
-            "Puedes preguntarme lo que necesites."
-        )
-        self.save_user_message(tracker)
-        dispatcher.utter_message(text=menu)
-        return []
-
 class ActionDespedida(BaseAction):
     def name(self) -> Text:
         return "action_despedida"
@@ -223,8 +201,6 @@ class ActionProblemasTecnicos(BaseAction):
         dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
         return []
 
-
-#MODIFICARRRRRRRRRR  MODIFICARRRRRRRRRRRR
 class ActionProcedimientoCambioTitulo(BaseAction):
     def name(self) -> Text:
         return "action_procedimiento_cambio_titulo"
@@ -232,115 +208,123 @@ class ActionProcedimientoCambioTitulo(BaseAction):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         self.save_user_message(tracker)
         dispatcher.utter_message(text="Considera que para el procedimiento de cambio de título, se debe presentar un documento con el siguiente formato: https://upcedupe-my.sharepoint.com/:w:/g/personal/u20211c528_upc_edu_pe/EdPp5XDqB4tBglLukTZOiI8ByN7ieKGHwKu6jki03tbfeg?e=zPUpIv. Cuando complete el documento, contactarse con su profes@r metodológico para escalarlo con la PMO.")
         return []
 
-#class ActionFormatoObjetivos(BaseAction):
-#    def name(self) -> Text:
-#        return "action_formato_objetivos"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#    
-#class ActionFormatoMemoriaTesis(BaseAction):
-#    def name(self) -> Text:
-#        return "action_formato_memoria_tesis"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#    
-#class ActionAprobacionSolicitudCambio(BaseAction):
-#    def name(self) -> Text:
-#        return "action_aprobacion_solicitud_cambio"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#
-#class ActionConsultarArtefactosScrum(BaseAction):
-#    def name(self) -> Text:
-#        return "action_consultar_artefactos_scrum"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#
-#class ActionExplicarPlanner(BaseAction):
-#    def name(self) -> Text:
-#        return "action_explicar_planner"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#    
-#class ActionContextoSprint(BaseAction):
-#    def name(self) -> Text:
-#        return "action_contexto_sprint"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#    
-#class ActionAprobacionProjectCharter(BaseAction):
-#    def name(self) -> Text:
-#        return "action_aprobacion_project_charter"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#    
-#class ActionContactarAsesorEspecializado(BaseAction):
-#    def name(self) -> Text:
-#        return "action_contactar_asesor_especializo"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
-#    
-#class ActionFormatoActas(BaseAction):
-#    def name(self) -> Text:
-#        return "action_formato_actas"
-#
-#    def run(self, dispatcher: CollectingDispatcher,
-#            tracker: Tracker,
-#            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#        self.save_user_message(tracker)
-#        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-#        return []
+class ActionFormatoObjetivosISI(BaseAction):
+    def name(self) -> Text:
+        return "action_formato_objetivosISI"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Registra el objetivo general y objetivos específicos para ISI con la siguiente estructura: OBJ1 - Analizar \nOBJ2 - Diseñar \n OBJ3 - Validar \n OBJ4 - Elaborar el Plan de Continuidad.")
+        return []
+
+class ActionFormatoObjetivosSW(BaseAction):
+    def name(self) -> Text:
+        return "action_formato_objetivosSW"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Registra el objetivo general y objetivos específicos para SW con la siguiente estructura: OBJ1 - Analizar \nOBJ2 - Diseñar \n OBJ3 - Desarrollar \n OBJ4 - Validar.")
+        return []
+    
+class ActionFormatoMemoriaTesis(BaseAction):
+    def name(self) -> Text:
+        return "action_formato_memoria_tesis"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Ingresa al siguiente enlace para obtener el formato de la memoria de Tesis: https://upcedupe-my.sharepoint.com/:w:/g/personal/u20211c528_upc_edu_pe/EdPp5XDqB4tBglLukTZOiI8ByN7ieKGHwKu6jki03tbfeg?e=zPUpIv")
+        return []
+    
+class ActionAprobacionSolicitudCambio(BaseAction):
+    def name(self) -> Text:
+        return "action_aprobacion_solicitud_cambio"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
+        return []
+
+class ActionConsultarArtefactosScrum(BaseAction):
+    def name(self) -> Text:
+        return "action_consultar_artefactos_scrum"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Los principales artefactos Scrum que se usaran dentro del curso son: \n * Daily Scrum - Reunión diaria de 15 minutos donde el equipo de desarrollo sincroniza actividades y planifica el trabajo del día.\n * Sprint Retrospective - Reunión al final del Sprint para reflexionar sobre cómo se trabajó.\n * Sprint Review - Reunión al final del Sprint donde se presenta el incremento al Product Owner y a los interesados.\n Ingresa al siguiente enlace https://upcedupe-my.sharepoint.com/:f:/g/personal/u20211c528_upc_edu_pe/EltM9v663Q9OlPdYcRBdhfgBvLINi6EQHXiZ_vS1yBgX9g?e=QjPvuI.")
+        return []
+
+class ActionExplicarPlanner(BaseAction):
+    def name(self) -> Text:
+        return "action_explicar_planner"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
+        return []
+    
+class ActionContextoSprint(BaseAction):
+    def name(self) -> Text:
+        return "action_contexto_sprint"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
+        return []
+    
+class ActionAprobacionProjectCharter(BaseAction):
+    def name(self) -> Text:
+        return "action_aprobacion_project_charter"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
+        return []
+    
+class ActionContactarAsesorEspecializado(BaseAction):
+    def name(self) -> Text:
+        return "action_contactar_asesor_especializo"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
+        return []
+    
+class ActionFormatoActas(BaseAction):
+    def name(self) -> Text:
+        return "action_formato_actas"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        self.save_user_message(tracker)
+        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
+        return []

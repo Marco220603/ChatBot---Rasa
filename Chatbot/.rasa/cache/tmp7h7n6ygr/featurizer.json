@@ -1,0 +1,64 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "cambio_titulo": 1,
+        "competencias_curso": 2,
+        "creditos_curso": 3,
+        "fechas_entrega": 4,
+        "horario_curso": 5,
+        "nlu_fallback": 6,
+        "objetivos_curso": 7,
+        "objetivos_proyectoISI": 8,
+        "objetivos_proyectoSW": 9,
+        "out_of_scope": 10,
+        "problemas_tecnicos": 11,
+        "restart": 12,
+        "session_start": 13,
+        "usuario_cambia_tema": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_objetivos_curso": 13,
+        "action_competecias_curso": 14,
+        "action_horario_curso": 15,
+        "action_creditos_curso": 16,
+        "action_fechas_entrega": 17,
+        "action_problemas_tecnicos": 18,
+        "action_usuario_cambia_tema": 19,
+        "action_usuario_pregunta_fuera_tema": 20,
+        "action_usuario_se_desvia_y_vuelve": 21,
+        "action_competencias_curso": 22,
+        "action_fallback_to_ollama": 23,
+        "action_feedback_satisfaction": 24,
+        "action_procedimiento_cambio_titulo": 25,
+        "action_formato_objetivosISI": 26,
+        "action_formato_objetivosSW": 27
+      },
+      "entities": {},
+      "slots": {
+        "last_user_message_0": 0,
+        "last_bot_response_0": 1
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}
