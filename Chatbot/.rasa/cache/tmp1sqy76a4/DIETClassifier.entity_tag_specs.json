@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-nombre_curso",
+      "2": "I-nombre_curso",
+      "3": "L-nombre_curso",
+      "4": "U-nombre_curso",
+      "5": "B-plataforma",
+      "6": "I-plataforma",
+      "7": "L-plataforma",
+      "8": "U-plataforma",
+      "9": "B-tipo_evaluacion",
+      "10": "I-tipo_evaluacion",
+      "11": "L-tipo_evaluacion",
+      "12": "U-tipo_evaluacion",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-nombre_curso": 1,
+      "I-nombre_curso": 2,
+      "L-nombre_curso": 3,
+      "U-nombre_curso": 4,
+      "B-plataforma": 5,
+      "I-plataforma": 6,
+      "L-plataforma": 7,
+      "U-plataforma": 8,
+      "B-tipo_evaluacion": 9,
+      "I-tipo_evaluacion": 10,
+      "L-tipo_evaluacion": 11,
+      "U-tipo_evaluacion": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

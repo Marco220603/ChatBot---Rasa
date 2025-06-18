@@ -1,8 +1,6 @@
 version: "3.1"
 
 nlu:
-# 🔹 INTENCIONES (INTENTS)
-
 - intent: objetivos_curso
   examples: |
     - ¿Cuáles son los objetivos del curso [Taller de Proyecto I](nombre_curso)?
@@ -10,7 +8,6 @@ nlu:
     - ¿Cuál es el propósito de los talleres de proyecto?
     - ¿Qué aprenderé en el [Taller de Proyecto I](nombre_curso)?
     - ¿Qué conocimientos adquiriré en el [Taller de Proyecto II](nombre_curso)?
-
 - intent: competencias_curso
   examples: |
     - ¿Qué competencias se desarrollan en los talleres de proyecto?
@@ -18,7 +15,6 @@ nlu:
     - ¿Qué competencias específicas se trabajan en el [Taller de Proyecto II](nombre_curso)?
     - ¿Qué nivel de competencias se alcanza en estos cursos?
     - ¿En qué competencias se enfoca el [Taller de Proyecto I](nombre_curso)?
-
 - intent: horario_curso
   examples: |
     - ¿Cuál es el horario del [Taller de Proyecto I](nombre_curso)?
@@ -26,13 +22,11 @@ nlu:
     - ¿Cuántas sesiones de laboratorio tiene el curso?
     - ¿Cuánto dura el [Taller de Proyecto I](nombre_curso)?
     - ¿Cuáles son los días de clase de estos cursos?
-
 - intent: creditos_curso
   examples: |
     - ¿Cuántos créditos tiene el [Taller de Proyecto I](nombre_curso)?
     - ¿Cuántos créditos necesito para completar estos cursos?
     - ¿El [Taller de Proyecto II](nombre_curso) tiene la misma cantidad de créditos que el I?
-
 - intent: fechas_entrega
   examples: |
     - ¿Cuándo es la entrega del [Trabajo Final](tipo_evaluacion)?
@@ -40,56 +34,96 @@ nlu:
     - ¿Hasta qué semana puedo presentar [Participación](tipo_evaluacion)?
     - ¿Las fechas de entrega son flexibles?
     - ¿Dónde puedo ver el cronograma del curso?
-
 - intent: problemas_tecnicos
   examples: |
     - ¿Qué hacer si tengo problemas técnicos en [Blackboard](plataforma)?
     - ¿Cómo reporto un error en [Aula Virtual](plataforma)?
     - ¿Qué pasa si no puedo acceder a la clase virtual?
     - ¿A quién puedo contactar si tengo problemas con [Microsoft Teams](plataforma)?
-- intent: usuario_cambia_tema
-  examples: |
-    - Quiero hablar de otra cosa
-    - Cambiemos de tema
 - intent: cambio_titulo
   examples: |
-    - titulo
-    - quiero cambiar el titulo del proyecto
-    - cómo cambio el titulo del proyecto
-    - modificar titulo 
-    - cambio de titulo
-- intent: objetivos_proyectoISI 
+    - título
+    - quiero cambiar el título del proyecto
+    - cómo cambio el título del proyecto
+    - modificar título
+    - cambio de título
+- intent: objetivos_proyectoISI
   examples: |
-    - objetivo general de ingenieria de sistemas
+    - objetivo general de ingeniería de sistemas
     - objetivo general de Ingeniería de Sistemas
     - Objetivo General de Ingeniería de Sistemas
     - obj general isi
     - objetivo general de isi
     - objetivos de isi
     - objetivos de ISI
-    - objetivo especificos de ingenieria de sistemas
-    - objetivo especificos de Ingeniería de Sistemas
+    - objetivo específicos de ingeniería de sistemas
+    - objetivo específicos de Ingeniería de Sistemas
     - Objetivo Específicos de Ingeniería de Sistemas
-    - obj especifico isi
-    - objetivo especifico de isi
-    - objetivos especificos de isi
-    - objetivos especificos de isi
+    - obj específico isi
+    - objetivo específico de isi
+    - objetivos específicos de isi
+    - objetivos específicos de isi
 - intent: objetivos_proyectoSW
-  examples:  |
-    - objetivo general de ingenieria de sowftware
+  examples: |
+    - objetivo general de ingeniería de software
     - objetivo general de Ingeniería de Software
     - Objetivo General de Ingeniería de Software
     - obj general sw
     - objetivo general de sw
     - objetivos de sw
     - objetivos de sw
-    - objetivo especificos de ingenieria de sowftware
-    - objetivo especificos de Ingeniería de Software
+    - objetivo específicos de ingeniería de software
+    - objetivo específicos de Ingeniería de Software
     - Objetivo Específicos de Ingeniería de Software
-    - obj especifico sw
-    - objetivo especifico de sw
-    - objetivos especificos de sw
-    - objetivos especificos de sw
+    - obj específico sw
+    - objetivo específico de sw
+    - objetivos específicos de sw
+    - objetivos específicos de sw
+- intent: despedida
+  examples: |
+    - adiós
+    - gracias, hasta luego
+    - nos vemos
+    - hasta luego
+    - chao
+    - bye
+    - chau
+- intent: artefactos_scrum
+  examples: |
+    - ¿Cuáles son los artefactos Scrum?
+    - ¿Qué artefactos se usan en Scrum?
+    - artefactos del curso
+    - ¿qué entregables son parte de Scrum?
+- intent: planner_tp1
+  examples: |
+    - Explica el cronograma del TP1
+    - ¿Cómo se organiza el TP1?
+    - etapas del TP1
+    - planner TP1
+    - calendario TP1
+- intent: planner_tp2
+  examples: |
+    - ¿Cómo está organizado el TP2?
+    - cronograma del TP2
+    - resumen del TP2
+    - planner TP2
+    - calendario TP2
+- intent: contexto_sprint
+  examples: |
+    - ¿Qué es un Sprint?
+    - explica sprint
+    - duración del sprint
+    - cómo funciona un sprint
+- intent: contactar_asesor
+  examples: |
+    - contactar asesor especializado
+    - quiero hablar con el asesor
+    - cómo contacto al asesor
+- intent: formato_acta
+  examples: |
+    - formato de acta
+    - dónde está el formato de reunión
+    - acta de reunión
 
 
 # 🔹 ENTIDADES DEFINIDAS (con sinónimos)
@@ -140,6 +174,7 @@ nlu:
     - PA
     - Asistencia activa
     - Interacción en clase
+
 
 # 🔹 LOOKUP TABLES (para mejorar precisión en valores fijos)
 - lookup: nombre_curso

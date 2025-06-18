@@ -1,87 +1,86 @@
 version: "3.1"
-
 stories:
+  - story: preguntar_objetivos_curso
+    steps:
+      - intent: objetivos_curso
+      - action: action_objetivos_curso
 
-# 🔹 Escenario 1: Consulta sobre los objetivos del curso
-- story: preguntar_objetivos_curso
-  steps:
-  - intent: objetivos_curso
-  - action: action_objetivos_curso
+  - story: preguntar_competencias
+    steps:
+      - intent: competencias_curso
+      - action: action_competencias_curso
 
-# 🔹 Escenario 2: Consulta sobre competencias del curso
-- story: preguntar_competencias
-  steps:
-  - intent: competencias_curso
-  - action: action_competencias_curso
+  - story: preguntar_horario
+    steps:
+      - intent: horario_curso
+      - action: action_horario_curso
 
-# 🔹 Escenario 3: Consulta sobre el horario del curso
-- story: preguntar_horario
-  steps:
-  - intent: horario_curso
-  - action: action_horario_curso
+  - story: preguntar_creditos
+    steps:
+      - intent: creditos_curso
+      - action: action_creditos_curso
 
-# 🔹 Escenario 4: Consulta sobre créditos del curso
-- story: preguntar_creditos
-  steps:
-  - intent: creditos_curso
-  - action: action_creditos_curso
+  - story: preguntar_fechas_entrega
+    steps:
+      - intent: fechas_entrega
+      - action: action_fechas_entrega
 
-# 🔹 Escenario 5: Pregunta sobre fechas de entrega
-- story: preguntar_fechas_entrega
-  steps:
-  - intent: fechas_entrega
-  - action: action_fechas_entrega
+  - story: problemas_tecnicos
+    steps:
+      - intent: problemas_tecnicos
+      - action: action_problemas_tecnicos
 
-# 🔹 Escenario 6: Problemas técnicos
-- story: problemas_tecnicos
-  steps:
-  - intent: problemas_tecnicos
-  - action: action_problemas_tecnicos
+  - story: usuario_pregunta_sobre_cambio_titulo
+    steps:
+      - intent: cambio_titulo
+      - action: action_procedimiento_cambio_titulo
 
-# 🔹 Escenario 7: Usuario cambia de tema durante la conversación
-- story: usuario_cambia_tema
-  steps:
-  - intent: objetivos_curso
-  - action: action_objetivos_curso
-  - intent: problemas_tecnicos
-  - action: action_problemas_tecnicos
-  - intent: fechas_entrega
-  - action: action_fechas_entrega
+  - story: consulta_no_establecida
+    steps:
+      - action: action_fallback_con_gpt
+      - action: action_verificar_feedback
 
-# 🔹 Escenario 8: Usuario pregunta algo fuera del tema
-- story: usuario_pregunta_fuera_del_tema
-  steps:
-  - intent: horario_curso
-  - action: action_horario_curso
-  - intent: problemas_tecnicos
-  - action: action_problemas_tecnicos
+  - story: consulta_sobre_objetivos_ISI
+    steps:
+      - intent: objetivos_proyectoISI
+      - action: action_formato_objetivosISI
 
-# 🔹 Escenario 9: Usuario se desvía y regresa al tema
-- story: usuario_se_desvia_y_vuelve
-  steps:
-  - intent: creditos_curso
-  - action: action_creditos_curso
-  - intent: fechas_entrega
-  - action: action_fechas_entrega
-  - intent: objetivos_curso
-  - action: action_objetivos_curso
+  - story: consulta_sobre_objetivos_SW
+    steps:
+      - intent: objetivos_proyectoSW
+      - action: action_formato_objetivosSW
 
-- story: usuario_pregunta_sobre_cambio_titulo
-  steps:
-  - intent: cambio_titulo
-  - action: action_procedimiento_cambio_titulo
+  - story: despedida_usuario
+    steps:
+      - intent: despedida
+      - action: action_despedida
 
-- story: consulta_no_establecida
-  steps:
-  - action: action_fallback_to_ollama
-  - action: action_feedback_satisfaction
+  - story: consultar_artefactos_scrum
+    steps:
+      - intent: artefactos_scrum
+      - action: action_consultar_artefactos_scrum
 
-- story: consulta_sobre_objetivos_ISI
-  steps:
-  - intent: objetivos_proyectoISI
-  - action: action_formato_objetivosISI
+  - story: explicar_planner_tp1
+    steps:
+      - intent: planner_tp1
+      - action: action_explicar_planner_tp1
 
-- story: consulta_sobre_objetivos_SW
-  steps:
-  - intent: objetivos_proyectoSW
-  - action: action_formato_objetivosSW
+  - story: explicar_planner_tp2
+    steps:
+      - intent: planner_tp2
+      - action: action_explicar_planner_tp2
+
+  - story: explicar_contexto_sprint
+    steps:
+      - intent: contexto_sprint
+      - action: action_contexto_sprint
+
+  - story: contactar_asesor
+    steps:
+      - intent: contactar_asesor
+      - action: action_contactar_asesor_especializado
+
+  - story: mostrar_formato_acta
+    steps:
+      - intent: formato_acta
+      - action: action_formato_acta_reunion

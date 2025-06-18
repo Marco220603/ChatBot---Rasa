@@ -7,11 +7,17 @@ intents:
   - creditos_curso
   - fechas_entrega
   - problemas_tecnicos
-  - usuario_cambia_tema
   - nlu_fallback
   - cambio_titulo
   - objetivos_proyectoISI
   - objetivos_proyectoSW
+  - despedida
+  - artefactos_scrum
+  - planner_tp1
+  - planner_tp2
+  - contexto_sprint
+  - contactar_asesor
+  - formato_acta
 
 slots:
   last_user_message:
@@ -25,20 +31,25 @@ slots:
 
 actions:
   - action_objetivos_curso
-  - action_competecias_curso
+  - action_competencias_curso
   - action_horario_curso
   - action_creditos_curso
   - action_fechas_entrega
   - action_problemas_tecnicos
-  - action_usuario_cambia_tema
-  - action_usuario_pregunta_fuera_tema
-  - action_usuario_se_desvia_y_vuelve
-  - action_competencias_curso
-  - action_fallback_to_ollama
-  - action_feedback_satisfaction 
   - action_procedimiento_cambio_titulo
   - action_formato_objetivosISI
   - action_formato_objetivosSW
+  - action_formato_memoria_tesis
+  - action_consultar_artefactos_scrum
+  - action_explicar_planner_tp1
+  - action_explicar_planner_tp2
+  - action_contexto_sprint
+  - action_contactar_asesor_especializado
+  - action_formato_acta_reunion
+  - action_fallback_con_gpt
+  - action_verificar_feedback
+  - action_consultar_estado_ticket
+  - action_despedida
 
 session_config:
   session_expiration_time: 60

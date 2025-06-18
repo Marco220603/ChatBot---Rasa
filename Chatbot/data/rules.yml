@@ -41,5 +41,4 @@ rules:
 - rule: Activar acción de fallback personalizada
   steps:
   - intent: nlu_fallback
-  - action: action_fallback_to_ollama
-  - action: action_feedback_satisfaction
+  - action: action_fallback_con_gpt

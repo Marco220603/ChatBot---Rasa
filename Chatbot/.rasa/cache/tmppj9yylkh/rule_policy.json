@@ -1,0 +1,30 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"creditos_curso\"}}]": "action_creditos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"creditos_curso\"}}, {\"prev_action\": {\"action_name\": \"action_creditos_curso\"}, \"user\": {\"intent\": \"creditos_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"objetivos_curso\"}}]": "action_objetivos_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"objetivos_curso\"}}, {\"prev_action\": {\"action_name\": \"action_objetivos_curso\"}, \"user\": {\"intent\": \"objetivos_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"problemas_tecnicos\"}}]": "action_problemas_tecnicos",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"problemas_tecnicos\"}}, {\"prev_action\": {\"action_name\": \"action_problemas_tecnicos\"}, \"user\": {\"intent\": \"problemas_tecnicos\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"competencias_curso\"}}]": "action_competencias_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"competencias_curso\"}}, {\"prev_action\": {\"action_name\": \"action_competencias_curso\"}, \"user\": {\"intent\": \"competencias_curso\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fechas_entrega\"}}]": "action_fechas_entrega",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fechas_entrega\"}}, {\"prev_action\": {\"action_name\": \"action_fechas_entrega\"}, \"user\": {\"intent\": \"fechas_entrega\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_fallback_con_gpt",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"action_fallback_con_gpt\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"horario_curso\"}}]": "action_horario_curso",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"horario_curso\"}}, {\"prev_action\": {\"action_name\": \"action_horario_curso\"}, \"user\": {\"intent\": \"horario_curso\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent back",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"action_fallback_con_gpt\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]"
+    ]
+  }
+}
