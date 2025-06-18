@@ -4,11 +4,14 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, EventType
 import requests
 import json
+import actions
+from .feedback_rag import FeedbackRAG
+
 
 # URLs de las APIs
-DJANGO_TICKET_URL = "http://localhost:8000/api/crear_ticket/"
-GPT_API_URL = "http://localhost:8000/api/gpt_response/" 
-LOG_API = "http://localhost:8000/api/log_mensaje/"
+DJANGO_TICKET_URL = "https://1fca-2800-4b0-443d-caac-ad1d-7de7-165d-7032.ngrok-free.app/api/crear_ticket/"
+GPT_API_URL = "https://1fca-2800-4b0-443d-caac-ad1d-7de7-165d-7032.ngrok-free.app/api/gpt_response/" 
+LOG_API = "https://1fca-2800-4b0-443d-caac-ad1d-7de7-165d-7032.ngrok-free.app/api/log_mensaje/"
 
 class ActionDespedida(Action):
     def name(self) -> Text:
@@ -369,6 +372,7 @@ class ActionResponderConGPT(Action):
         return "action_fallback_con_gpt"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict) -> List[EventType]:
+        # Obtener el mensaje del usuario
         user_message = tracker.latest_message.get("text")
         print(f"📥 Consulta recibida: {user_message}")
 
@@ -377,7 +381,8 @@ class ActionResponderConGPT(Action):
         try:
             gpt_check_response = requests.post(GPT_API_URL, json=gpt_check_payload)
             gpt_can_answer = gpt_check_response.json().get("can_answer", False)
-        except:
+        except Exception as e:
+            print(f"❌ Error al consultar GPT: {e}")
             gpt_can_answer = False
 
         # Paso 2: Si GPT no puede responder, buscar contexto en FAISS
@@ -385,30 +390,34 @@ class ActionResponderConGPT(Action):
         if not gpt_can_answer:
             print("🔍 GPT no puede responder directamente. Consultando FAISS...")
             try:
-                from .feedback_rag import FeedbackRAG
-                rag = FeedbackRAG()
-                contexto_rag = rag.search(user_message)
+                rag = FeedbackRAG()  # Consultamos FAISS para obtener el contexto más relevante
+                contexto_rag = rag.search(user_message)  # Este es el contexto extraído de FAISS
+                print(f"🔍 Contexto extraído de FAISS: {contexto_rag}")
             except Exception as e:
                 print(f"❌ Error al cargar FeedbackRAG: {e}")
                 contexto_rag = ""
 
-        # Resto del código permanece igual...
+        # Paso 3: Hacer la consulta a GPT, incluyendo el contexto de FAISS si fue encontrado
         payload = {
             "query": user_message,
-            "context": contexto_rag
+            "context": contexto_rag,  # Incluir el contexto si FAISS proporcionó algo
+            "model": "ft:gpt-4o-mini-2024-07-18:personal:pomisndtrain"  # Especificar el modelo ajustado fine-tuned
         }
+
+        # Llamada al API de GPT (ajustado)
         try:
             gpt_response = requests.post(GPT_API_URL, json=payload)
             gpt_text = gpt_response.json().get("response", "Lo siento, no pude procesar tu solicitud.")
-        except:
+        except Exception as e:
+            print(f"❌ Error al generar la respuesta con GPT: {e}")
             gpt_text = "Lo siento, estoy teniendo problemas técnicos. Por favor intenta más tarde."
 
         print(f"🤖 Respuesta generada por GPT: {gpt_text}")
         dispatcher.utter_message(text=gpt_text)
         dispatcher.utter_message(text="¿Esta respuesta resolvió tu duda? (Responde: Sí o No)")
 
+        # Almacenar el último mensaje y la respuesta generada en los slots para un posible seguimiento
         return [
             SlotSet("last_user_message", user_message),
             SlotSet("last_bot_response", gpt_text)
         ]
-
