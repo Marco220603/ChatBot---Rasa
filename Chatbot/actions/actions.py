@@ -9,9 +9,9 @@ from .feedback_rag import FeedbackRAG
 
 
 # URLs de las APIs
-DJANGO_TICKET_URL = "https://1fca-2800-4b0-443d-caac-ad1d-7de7-165d-7032.ngrok-free.app/api/crear_ticket/"
-GPT_API_URL = "https://1fca-2800-4b0-443d-caac-ad1d-7de7-165d-7032.ngrok-free.app/api/gpt_response/" 
-LOG_API = "https://1fca-2800-4b0-443d-caac-ad1d-7de7-165d-7032.ngrok-free.app/api/log_mensaje/"
+DJANGO_TICKET_URL = "http://localhost:8000/api/crear_ticket/"
+GPT_API_URL = "http://localhost:8000/api/gpt_response/" 
+LOG_API = "http://localhost:8000/api/log_mensaje/"
 
 class ActionDespedida(Action):
     def name(self) -> Text:
@@ -371,53 +371,51 @@ class ActionResponderConGPT(Action):
     def name(self) -> Text:
         return "action_fallback_con_gpt"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict) -> List[EventType]:
-        # Obtener el mensaje del usuario
-        user_message = tracker.latest_message.get("text")
-        print(f"📥 Consulta recibida: {user_message}")
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[EventType]:
 
-        # Paso 1: Enviar a GPT para verificar si puede responder directamente
-        gpt_check_payload = {"query": user_message, "check_only": True}
+        user_message = tracker.latest_message.get("text", "")
+        sender_id = tracker.sender_id
+        print(f"📥 Consulta recibida de {sender_id}: {user_message}")
+
+        # Paso 1: Verificar si GPT puede responder directamente (check_only)
+        gpt_can_answer = False
         try:
-            gpt_check_response = requests.post(GPT_API_URL, json=gpt_check_payload)
-            gpt_can_answer = gpt_check_response.json().get("can_answer", False)
+            check_payload = {"query": user_message, "check_only": True}
+            check_response = requests.post(GPT_API_URL, json=check_payload, timeout=5)
+            check_response.raise_for_status()
+            gpt_can_answer = check_response.json().get("can_answer", False)
         except Exception as e:
-            print(f"❌ Error al consultar GPT: {e}")
-            gpt_can_answer = False
+            print(f"❌ Error al verificar con GPT (check_only): {e}")
 
-        # Paso 2: Si GPT no puede responder, buscar contexto en FAISS
-        contexto_rag = ""
+        # Paso 2: Si no puede responder directo, obtener contexto con FAISS
+        contexto = ""
         if not gpt_can_answer:
-            print("🔍 GPT no puede responder directamente. Consultando FAISS...")
+            print("🔍 Consultando FAISS por contexto adicional...")
             try:
-                rag = FeedbackRAG()  # Consultamos FAISS para obtener el contexto más relevante
-                contexto_rag = rag.search(user_message)  # Este es el contexto extraído de FAISS
-                print(f"🔍 Contexto extraído de FAISS: {contexto_rag}")
+                rag = FeedbackRAG()
+                contexto = rag.search(user_message) or ""
+                print(f"🧠 Contexto FAISS: {contexto[:100]}...")  # Muestra solo los primeros 100 caracteres
             except Exception as e:
-                print(f"❌ Error al cargar FeedbackRAG: {e}")
-                contexto_rag = ""
+                print(f"❌ Error al consultar FAISS: {e}")
 
-        # Paso 3: Hacer la consulta a GPT, incluyendo el contexto de FAISS si fue encontrado
-        payload = {
+        # Paso 3: Enviar consulta a Django para que GPT responda y entregue
+        final_payload = {
             "query": user_message,
-            "context": contexto_rag,  # Incluir el contexto si FAISS proporcionó algo
-            "model": "ft:gpt-4o-mini-2024-07-18:personal:pomisndtrain"  # Especificar el modelo ajustado fine-tuned
+            "context": contexto,
+            "usuario_id": sender_id
         }
 
-        # Llamada al API de GPT (ajustado)
         try:
-            gpt_response = requests.post(GPT_API_URL, json=payload)
-            gpt_text = gpt_response.json().get("response", "Lo siento, no pude procesar tu solicitud.")
+            response = requests.post(GPT_API_URL, json=final_payload, timeout=10)
+            response.raise_for_status()
+            print("✅ Payload enviado a Django para procesamiento y respuesta.")
         except Exception as e:
-            print(f"❌ Error al generar la respuesta con GPT: {e}")
-            gpt_text = "Lo siento, estoy teniendo problemas técnicos. Por favor intenta más tarde."
+            print(f"❌ Error al enviar consulta a Django: {e}")
 
-        print(f"🤖 Respuesta generada por GPT: {gpt_text}")
-        dispatcher.utter_message(text=gpt_text)
-        dispatcher.utter_message(text="¿Esta respuesta resolvió tu duda? (Responde: Sí o No)")
-
-        # Almacenar el último mensaje y la respuesta generada en los slots para un posible seguimiento
+        # Rasa no responde al usuario directamente, solo deja trazabilidad
         return [
             SlotSet("last_user_message", user_message),
-            SlotSet("last_bot_response", gpt_text)
+            SlotSet("last_bot_response", "[respuesta enviada por Django]"),
         ]
