@@ -1,0 +1,27 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohI78osSgzPz65tKg4v7Y2FgDUyh7t": "utter_horario_curso",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohI78osSgzPz65tKg4v5aAWaUlJalF8ahaCJkYCwDS5z7P": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohLTU5I7E4HsguSk1PrK2NBQDxqR8d": "utter_fechas_entrega",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohLTU5I7E4HsguSk1PrCVgWGlJSWpRPJoegmbGAgBzTz9f": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhoCg/KSc1N7E4viQ1OS8zOb+4tjYWAHRaIOo=": "utter_problemas_tecnicos",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhoCg/KSc1N7E4viQ1OS8zOb+4loCBpSUlqUXxWPQRZXYsALQSRMY=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohPykrtSSzLL84Prm0qDi/tjYWABP/H84=": "utter_objetivos_curso",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohPykrtSSzLL84Prm0qDi/loBppSUlqUXx6JoImxoLAGEGQXI=": "action_listen",
+    "eJyljkEKgDAMBL/SB/iCfkUk1JJDRJOSpF5K/25BT148eNuB3WHn1qfQiuIJKTsJx9DuAJwOjOGBncyRR7ca6ugQD/QYZN3Q6RSDXNWkf9iqOyq8R3+tHx+LyrrjkQwcM1MW6325AP5lYKs=": "utter_problemas_tecnicos",
+    "eJyljkEKgDAMBL/SB/iCfkUk1JJDRBNJUi/Fv1vQkwgK3nZhZ9i+7l2oq+IGKTsJx1DPAJwWjOEqM5kjt20x1LYhbtVjkHFCp00MclGT/cVW3FHhDv21vnxcVcYZl2TgmJmy2LebD9wn93AAKOGEhw==": "action_listen",
+    "eJytjkEKwzAMBL/iB/QF/koowjFKq5JIQZJzMf57De0pFFxob7uwO8xU2yXUXfGAlJ2EY6ivAJw2jOFdVjJH7ttiqH1D3KvHIPMDnQ4xyEVN2oBW3FHhfPqVOnDcVeYVt2TgmJmy2HeaH35/YA9kF8z3TutZ8ZZauz4Bcwih8w==": "utter_fechas_entrega",
+    "eJytjkEKwzAMBL/iB/QF/koowjFK65JIQZJzMfl7Be0pBBxob7uwO8zQ9ltoq+AGKVthiqF9AlBaMIZvmYsakm+rovimkFeLgccXWtlYIVdR3ju0aoYCx9Ov1I7jKjzOuCQFw0wls17TPPn9gd2RnTA/neZZ8JGuiR4+Xeb9DeVcwjU=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohuSg1JbMkvzg+ubSoOL+2NhYA86QfVg==": "utter_creditos_curso",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohuSg1JbMkvzg+ubSoOL+WgGGlJSWpRfFoegiaGQsAkxRACg==": "action_listen",
+    "eJyljkEKgDAMBL/SB/iCfkUk1BIwoElJUi+lf7egF08evO3A7rBz61NoRfGElJ2EY2h3AE4HxvDATubIo1sNdXSIB3oMm2hSEshVTfqHq7qjwnvyz/jxrqisOx7JwDEzZbHelwuas14I": "utter_problemas_tecnicos",
+    "eJyljkEKgDAMBL/SB/iCfkUk1BIwoIkkqZfi3y3oRRAUvO3CzrB93btQV8UNUnYSjqGeATgtGMNVZjJHbttiqG1D3KrHMIkmJYFc1GR/cRV3VLgj/4wv71aVccYlGThmpiz27eID98k9HNJ9geQ=": "action_listen",
+    "eJyljkEKgDAMBL+SB/iCfkUkhBq1oK0kqZfSv1vQk5cevM3C7rBjqQOUU/hC8hZSdFAewEgHO3jDHtQ4tm5WltYJsUVz4IXnYEnRZ9FUO7JsxoKfzU9n5+DCfiPFxsIr1TrdQnZddg==": "utter_fechas_entrega",
+    "eJyljkEKgDAMBL/SB/iCfkUklBq1oK0kqZfSvxvQUy8VvO3CzrBjqYMpJ+EFzktI0ZryBIjuQGvesgcWjLrNjKSbELWKNZ5wDpIYfCZOtSPLIkjQMD+dnYML+s0xaCZc3beDDdN1Tjc6fH24": "action_listen",
+    "eJylj1EKwzAMQ6+SA/QEuUoZJsvUzWVLiu30J/TuC6xQ6E8G/ZNAekhj3QZXF8FKIRrn5F39CUrhA+9282Y1pJYtCmkZTs2ad1HwYMtKsYjmrQMrZhA6dS4yOwMnxFdQalrwDP8NPHUuMjsD832G8XrcvX0BFp+b1Q==": "utter_objetivos_curso",
+    "eJylkEEKwzAQA7/iB+QF/koJi+Oq7YbULrvrXEz+XkN78sUtuUkgDUKXekyuvgQ7hWick3f1IyiFJ7z7mo3VkFq2KKRlODVr3kXBlS0rxSKajwGsmEGo65xkDgbeEB9BqWnBPfw2sOucZA4G5mWF8f7fhX1pTJ3fEHa9eQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohOT+3IBXITM5MLI5PLi0qzq+tjQUAdDMg9A==": "utter_competencias_curso",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohOT+3IBXITM5MLI5PLi0qzq8lYGBpSUlqUTwWfUSZHQsAuJ1E5A==": "action_listen"
+  }
+}
