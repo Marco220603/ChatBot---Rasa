@@ -13,6 +13,7 @@ DJANGO_TICKET_URL = "http://localhost:8000/api/crear_ticket/"
 GPT_API_URL = "http://localhost:8000/api/gpt_response/" 
 LOG_API = "http://localhost:8000/api/log_mensaje/"
 
+
 class ActionDespedida(Action):
     def name(self) -> Text:
         return "action_despedida"
@@ -32,7 +33,7 @@ class ActionDespedida(Action):
 class ActionObjetivosCurso(Action):
     def name(self) -> Text:
         return "action_objetivos_curso"
-
+    
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         user_msg = tracker.latest_message.get("text", "")
         sender_id = tracker.sender_id
@@ -44,7 +45,7 @@ class ActionObjetivosCurso(Action):
         
         dispatcher.utter_message(text="El Taller de Proyecto busca que desarrolles habilidades para resolver problemas reales aplicando conocimientos de tu carrera.")
         return []
-
+  
 class ActionCompetenciasCurso(Action):
     def name(self) -> Text:
         return "action_competencias_curso"
@@ -367,6 +368,8 @@ class ActionConsultarEstadoTicket(Action):
 
         return []
 
+from rasa_sdk.events import SlotSet
+
 class ActionResponderConGPT(Action):
     def name(self) -> Text:
         return "action_fallback_con_gpt"
@@ -389,33 +392,36 @@ class ActionResponderConGPT(Action):
         except Exception as e:
             print(f"❌ Error al verificar con GPT (check_only): {e}")
 
-        # Paso 2: Si no puede responder directo, obtener contexto con FAISS
+        # Paso 2: Obtener contexto si GPT no puede responder directamente
         contexto = ""
         if not gpt_can_answer:
             print("🔍 Consultando FAISS por contexto adicional...")
             try:
                 rag = FeedbackRAG()
                 contexto = rag.search(user_message) or ""
-                print(f"🧠 Contexto FAISS: {contexto[:100]}...")  # Muestra solo los primeros 100 caracteres
+                print(f"🧠 Contexto FAISS: {contexto[:100]}...")
             except Exception as e:
                 print(f"❌ Error al consultar FAISS: {e}")
 
-        # Paso 3: Enviar consulta a Django para que GPT responda y entregue
-        final_payload = {
-            "query": user_message,
-            "context": contexto,
-            "usuario_id": sender_id
-        }
-
+        # Paso 3: Enviar a GPT
+        gpt_text = "❌ GPT no respondió."
         try:
-            response = requests.post(GPT_API_URL, json=final_payload, timeout=10)
+            response = requests.post(GPT_API_URL, json={
+                "query": user_message,
+                "context": contexto,
+                "usuario_id": sender_id
+            }, timeout=10)
             response.raise_for_status()
-            print("✅ Payload enviado a Django para procesamiento y respuesta.")
+            gpt_text = response.json().get("response", gpt_text)
+            print("✅ Respuesta obtenida desde Django/GPT.")
         except Exception as e:
             print(f"❌ Error al enviar consulta a Django: {e}")
 
-        # Rasa no responde al usuario directamente, solo deja trazabilidad
+        # ✅ Enviar respuesta a Django (no directamente al usuario)
+        dispatcher.utter_message(json_message={"gpt_response": gpt_text})
+
+        # ✅ Retornar SOLO EventTypes válidos (sin custom dicts sueltos)
         return [
             SlotSet("last_user_message", user_message),
-            SlotSet("last_bot_response", "[respuesta enviada por Django]"),
+            SlotSet("last_bot_response", gpt_text)
         ]
