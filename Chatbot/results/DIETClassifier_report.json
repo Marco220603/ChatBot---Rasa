@@ -1,0 +1,35 @@
+{
+  "tipo_evaluacion": {
+    "precision": 0.75,
+    "recall": 0.6,
+    "f1-score": 0.6666666666666665,
+    "support": 5,
+    "confused_with": {}
+  },
+  "nombre_curso": {
+    "precision": 0.9090909090909091,
+    "recall": 1.0,
+    "f1-score": 0.9523809523809523,
+    "support": 40,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.8958333333333334,
+    "recall": 0.9555555555555556,
+    "f1-score": 0.924731182795699,
+    "support": 45
+  },
+  "macro avg": {
+    "precision": 0.8295454545454546,
+    "recall": 0.8,
+    "f1-score": 0.8095238095238094,
+    "support": 45
+  },
+  "weighted avg": {
+    "precision": 0.8914141414141413,
+    "recall": 0.9555555555555556,
+    "f1-score": 0.9206349206349207,
+    "support": 45
+  },
+  "accuracy": 0.98005698005698
+}
