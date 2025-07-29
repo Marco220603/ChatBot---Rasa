@@ -1,0 +1,131 @@
+version: "3.1"
+
+nlu:
+- intent: objetivos_curso
+  examples: |
+  - cUALES son los objs del curso?
+  - dame los objetivos del curso
+  - sabes scuales son los onjetivos del curwso de tp1?
+  - cual es la finalidad del curso
+  - objs del curso
+  - el curso tiene objetivos, cuales son
+  - genera los objetivos del curso
+  - obj de tp1
+  - obj de talleres de proyecto
+  - 
+- intent: competencias_curso
+  examples: |
+  - ¿Qué competencias se desarrollan en los talleres de proyecto?
+  - ¿Cuáles son las habilidades que adquiriré en el Taller de Proyecto I?
+  - ¿Qué competencias específicas se trabajan en el Taller de Proyecto II?
+  - ¿Qué nivel de competencias se alcanza en estos cursos?
+  - ¿En qué competencias se enfoca el Taller de Proyecto I?
+- intent: horario_curso
+  examples: |
+  - ¿Cuál es el horario del Taller de Proyecto I?
+  - ¿Cuántas horas de clase tiene el Taller de Proyecto II?
+  - ¿Cuántas sesiones de laboratorio tiene el curso?
+  - ¿Cuánto dura el Taller de Proyecto I?
+  - ¿Cuáles son los días de clase de estos cursos?
+- intent: creditos_curso
+  examples: |
+  - ¿Cuántos créditos tiene el Taller de Proyecto I?
+  - ¿Cuántos créditos necesito para completar estos cursos?
+  - ¿El Taller de Proyecto II tiene la misma cantidad de créditos que el I?
+- intent: fechas_entrega
+  examples: |
+  - ¿Cuándo es la entrega del Trabajo Final?
+  - ¿Cuál es la fecha límite para el Trabajo Parcial?
+  - ¿Hasta qué semana puedo presentar Participación?
+  - ¿Las fechas de entrega son flexibles?
+  - ¿Dónde puedo ver el cronograma del curso?
+- intent: problemas_tecnicos
+  examples: |
+  - ¿Qué hacer si tengo problemas técnicos en Blackboard?
+  - ¿Cómo reporto un error en Aula Virtual?
+  - ¿Qué pasa si no puedo acceder a la clase virtual?
+  - ¿A quién puedo contactar si tengo problemas con Microsoft Teams?
+- intent: cambio_titulo
+  examples: |
+  - título
+  - quiero cambiar el título del proyecto
+  - cómo cambio el título del proyecto
+  - modificar título
+  - cambio de título
+- intent: objetivos_proyectoISI
+  examples: |
+  - objetivo general de ingeniería de sistemas
+  - objetivo general de Ingeniería de Sistemas
+  - Objetivo General de Ingeniería de Sistemas
+  - obj general isi
+  - objetivo general de isi
+  - objetivos de isi
+  - objetivos de ISI
+  - objetivo específicos de ingeniería de sistemas
+  - objetivo específicos de Ingeniería de Sistemas
+  - Objetivo Específicos de Ingeniería de Sistemas
+  - obj específico isi
+  - objetivo específico de isi
+  - objetivos específicos de isi
+  - objetivos específicos de isi
+- intent: objetivos_proyectoSW
+  examples: |
+  - objetivo general de ingeniería de software
+  - objetivo general de Ingeniería de Software
+  - Objetivo General de Ingeniería de Software
+  - obj general sw
+  - objetivo general de sw
+  - objetivos de sw
+  - objetivos de sw
+  - objetivo específicos de ingeniería de software
+  - objetivo específicos de Ingeniería de Software
+  - Objetivo Específicos de Ingeniería de Software
+  - obj específico sw
+  - objetivo específico de sw
+  - objetivos específicos de sw
+  - objetivos específicos de sw
+- intent: despedida
+  examples: |
+  - adiós
+  - gracias, hasta luego
+  - nos vemos
+  - hasta luego
+  - chao
+  - bye
+  - chau
+- intent: artefactos_scrum
+  examples: |
+  - ¿Cuáles son los artefactos Scrum?
+  - ¿Qué artefactos se usan en Scrum?
+  - artefactos del curso
+  - ¿qué entregables son parte de Scrum?
+- intent: planner_tp1
+  examples: |
+  - Explica el cronograma del TP1
+  - ¿Cómo se organiza el TP1?
+  - etapas del TP1
+  - planner TP1
+  - calendario TP1
+- intent: planner_tp2
+  examples: |
+  - ¿Cómo está organizado el TP2?
+  - cronograma del TP2
+  - resumen del TP2
+  - planner TP2
+  - calendario TP2
+- intent: contexto_sprint
+  examples: |
+  - ¿Qué es un Sprint?
+  - explica sprint
+  - duración del sprint
+  - cómo funciona un sprint
+- intent: contactar_asesor
+  examples: |
+  - contactar asesor especializado
+  - quiero hablar con el asesor
+  - cómo contacto al asesor
+- intent: formato_acta
+  examples: |
+  - formato de acta
+  - dónde está el formato de reunión
+  - acta de reunión

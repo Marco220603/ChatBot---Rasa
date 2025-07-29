@@ -368,8 +368,6 @@ class ActionConsultarEstadoTicket(Action):
 
         return []
 
-from rasa_sdk.events import SlotSet
-
 class ActionResponderConGPT(Action):
     def name(self) -> Text:
         return "action_fallback_con_gpt"
@@ -403,8 +401,8 @@ class ActionResponderConGPT(Action):
             except Exception as e:
                 print(f"❌ Error al consultar FAISS: {e}")
 
-        # Paso 3: Enviar a GPT
-        gpt_text = "❌ GPT no respondió."
+        # Paso 3: Enviar a GPT(Error GPT)
+        gpt_text = "❌ No puedo responder ahora."
         try:
             response = requests.post(GPT_API_URL, json={
                 "query": user_message,

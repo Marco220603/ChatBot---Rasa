@@ -1,40 +1,24 @@
 {
-  "horario_curso": {
-    "precision": 0.6666666666666666,
-    "recall": 0.4,
-    "f1-score": 0.5,
-    "support": 5,
-    "confused_with": {
-      "objetivos_curso": 3
-    }
-  },
-  "planner_tp1": {
+  "competencias_curso": {
     "precision": 1.0,
-    "recall": 0.6,
-    "f1-score": 0.7499999999999999,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 5,
-    "confused_with": {
-      "planner_tp2": 1,
-      "fechas_entrega": 1
-    }
+    "confused_with": {}
   },
-  "planner_tp2": {
-    "precision": 0.8,
-    "recall": 0.8,
-    "f1-score": 0.8000000000000002,
-    "support": 5,
-    "confused_with": {
-      "fechas_entrega": 1
-    }
+  "contexto_sprint": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
   },
-  "fechas_entrega": {
-    "precision": 0.6666666666666666,
-    "recall": 0.8,
-    "f1-score": 0.7272727272727272,
+  "objetivos_curso": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 5,
-    "confused_with": {
-      "objetivos_curso": 1
-    }
+    "confused_with": {}
   },
   "objetivos_proyectoISI": {
     "precision": 1.0,
@@ -43,21 +27,39 @@
     "support": 13,
     "confused_with": {}
   },
-  "objetivos_curso": {
-    "precision": 0.375,
-    "recall": 0.6,
-    "f1-score": 0.4615384615384615,
-    "support": 5,
-    "confused_with": {
-      "horario_curso": 1,
-      "competencias_curso": 1
-    }
-  },
-  "despedida": {
+  "artefactos_scrum": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 7,
+    "support": 4,
+    "confused_with": {}
+  },
+  "horario_curso": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "creditos_curso": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "problemas_tecnicos": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "planner_tp1": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
     "confused_with": {}
   },
   "cambio_titulo": {
@@ -67,15 +69,6 @@
     "support": 5,
     "confused_with": {}
   },
-  "competencias_curso": {
-    "precision": 0.8,
-    "recall": 0.8,
-    "f1-score": 0.8000000000000002,
-    "support": 5,
-    "confused_with": {
-      "objetivos_curso": 1
-    }
-  },
   "objetivos_proyectoSW": {
     "precision": 1.0,
     "recall": 1.0,
@@ -83,23 +76,58 @@
     "support": 12,
     "confused_with": {}
   },
-  "accuracy": 0.8507462686567164,
+  "planner_tp2": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "contactar_asesor": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "formato_acta": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "despedida": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "fechas_entrega": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.8308333333333333,
-    "recall": 0.8,
-    "f1-score": 0.8038811188811188,
-    "support": 67
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 88
   },
   "weighted avg": {
-    "precision": 0.8737562189054726,
-    "recall": 0.8507462686567164,
-    "f1-score": 0.8536426260306857,
-    "support": 67
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 88
   },
   "micro avg": {
-    "precision": 0.8507462686567164,
-    "recall": 0.8507462686567164,
-    "f1-score": 0.8507462686567164,
-    "support": 67
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 88
   }
 }
