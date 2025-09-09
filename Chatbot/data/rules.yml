@@ -35,9 +35,3 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: action_fallback_con_gpt
-
-
-- rule: Responder sobre problemas técnicos
-  steps:
-  - intent: problemas_tecnicos
-  - action: action_problemas_tecnicos

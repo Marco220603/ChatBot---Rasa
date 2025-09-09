@@ -25,11 +25,6 @@ stories:
       - intent: fechas_entrega
       - action: action_fechas_entrega
 
-  - story: problemas_tecnicos
-    steps:
-      - intent: problemas_tecnicos
-      - action: action_problemas_tecnicos
-
   - story: usuario_pregunta_sobre_cambio_titulo
     steps:
       - intent: cambio_titulo
@@ -45,15 +40,11 @@ stories:
       - intent: objetivos_proyectoISI
       - action: action_formato_objetivosISI
 
-  - story: consulta_sobre_objetivos_SW
+  - story: consulta_sobre_objetivos_SW_CC
     steps:
       - intent: objetivos_proyectoSW
-      - action: action_formato_objetivosSW
-
-  - story: despedida_usuario
-    steps:
-      - intent: despedida
-      - action: action_despedida
+      - intent: objetivos_proyectoCC
+      - action: action_formato_objetivosSWyCC
 
   - story: consultar_artefactos_scrum
     steps:
@@ -82,5 +73,11 @@ stories:
 
   - story: mostrar_formato_acta
     steps:
-      - intent: formato_acta
+      - intent: formato_acta_reunion
       - action: action_formato_acta_reunion
+
+  - story: mostrar_formato_memoria_tesis
+    steps:
+      - intent: formato_memoria_tesis
+      - action: action_formato_memoria_tesis
+

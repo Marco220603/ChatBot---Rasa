@@ -1,52 +1,29 @@
 version: "3.1"
 
 nlu:
-- intent: objetivos_curso
-  examples: |
-    - ¿Cuáles son los objetivos del curso [Taller de Proyecto I](nombre_curso)?
-    - ¿Qué busca lograr el curso [Taller de Proyecto II](nombre_curso)?
-    - ¿Cuál es el propósito de los talleres de proyecto?
-    - ¿Qué aprenderé en el [Taller de Proyecto I](nombre_curso)?
-    - ¿Qué conocimientos adquiriré en el [Taller de Proyecto II](nombre_curso)?
-- intent: competencias_curso
-  examples: |
-    - ¿Qué competencias se desarrollan en los talleres de proyecto?
-    - ¿Cuáles son las habilidades que adquiriré en el [Taller de Proyecto I](nombre_curso)?
-    - ¿Qué competencias específicas se trabajan en el [Taller de Proyecto II](nombre_curso)?
-    - ¿Qué nivel de competencias se alcanza en estos cursos?
-    - ¿En qué competencias se enfoca el [Taller de Proyecto I](nombre_curso)?
-- intent: horario_curso
-  examples: |
-    - ¿Cuál es el horario del [Taller de Proyecto I](nombre_curso)?
-    - ¿Cuántas horas de clase tiene el [Taller de Proyecto II](nombre_curso)?
-    - ¿Cuántas sesiones de laboratorio tiene el curso?
-    - ¿Cuánto dura el [Taller de Proyecto I](nombre_curso)?
-    - ¿Cuáles son los días de clase de estos cursos?
-- intent: creditos_curso
-  examples: |
-    - ¿Cuántos créditos tiene el [Taller de Proyecto I](nombre_curso)?
-    - ¿Cuántos créditos necesito para completar estos cursos?
-    - ¿El [Taller de Proyecto II](nombre_curso) tiene la misma cantidad de créditos que el I?
-- intent: fechas_entrega
-  examples: |
-    - ¿Cuándo es la entrega del [Trabajo Final](tipo_evaluacion)?
-    - ¿Cuál es la fecha límite para el [Trabajo Parcial](tipo_evaluacion)?
-    - ¿Hasta qué semana puedo presentar [Participación](tipo_evaluacion)?
-    - ¿Las fechas de entrega son flexibles?
-    - ¿Dónde puedo ver el cronograma del curso?
-- intent: problemas_tecnicos
-  examples: |
-    - ¿Qué hacer si tengo problemas técnicos en [Blackboard](plataforma)?
-    - ¿Cómo reporto un error en [Aula Virtual](plataforma)?
-    - ¿Qué pasa si no puedo acceder a la clase virtual?
-    - ¿A quién puedo contactar si tengo problemas con [Microsoft Teams](plataforma)?
 - intent: cambio_titulo
   examples: |
     - título
+    - cambiar título
     - quiero cambiar el título del proyecto
-    - cómo cambio el título del proyecto
-    - modificar título
-    - cambio de título
+    - modificar el nombre del proyecto
+    - cómo cambio el título del trabajo
+    - necesito actualizar el título
+    - me equivoqué con el título, ¿puedo corregirlo?
+    - puedo editar el nombre del proyecto que registré
+    - cambiar el nombre que puse inicialmente
+    - deseo cambiar el título porque he ajustado el enfoque
+    - ya no quiero usar el mismo título, ¿cómo lo cambio?
+    - ¿es posible modificar el título del proyecto que envié?
+    - ¿cómo actualizo el título que aparece en el sistema?
+    - quiero corregir el nombre del proyecto antes de enviarlo
+    - el título no refleja lo que estoy haciendo, necesito editarlo
+    - hubo un error en el nombre del proyecto, ¿cómo lo arreglo?
+    - ¿puedo modificar el título aunque ya haya sido aprobado?
+    - necesito ponerle un nuevo título a mi proyecto
+    - ¿cómo reemplazo el título actual por uno nuevo?
+    - ¿se puede cambiar el título en esta etapa del proceso?
+
 - intent: objetivos_proyectoISI
   examples: |
     - objetivo general de ingeniería de sistemas
@@ -63,6 +40,7 @@ nlu:
     - objetivo específico de isi
     - objetivos específicos de isi
     - objetivos específicos de isi
+
 - intent: objetivos_proyectoSW
   examples: |
     - objetivo general de ingeniería de software
@@ -79,147 +57,270 @@ nlu:
     - objetivo específico de sw
     - objetivos específicos de sw
     - objetivos específicos de sw
-- intent: despedida
+
+- intent: objetivos_proyectoCC
   examples: |
-    - adiós
-    - gracias, hasta luego
-    - nos vemos
-    - hasta luego
-    - chao
-    - bye
-    - chau
+    - objetivo general de ingeniería de ciencias de la computacion
+    - objetivo general de Ingeniería de Ciencias de la computacion
+    - Objetivo General de Ingeniería de Ciencias de la Computacion
+    - obj general cc
+    - objetivo general de cc
+    - objetivos de cc
+    - objetivos de cc
+    - objetivo específicos de ingeniería de ciencias de la computacion
+    - objetivo específicos de Ingeniería de Ciencias de la computacion
+    - Objetivo Específicos de Ingeniería de Ciencias de la Computacion
+    - obj específico cc
+    - objetivo específico de cc
+    - objetivos específicos de cc
+    - objetivos específicos de cc
+
+- intent: formato_memoria_tesis
+  examples: |
+    - cuál es el formato de la memoria de tesis
+    - dime el formato de memoria de tesis
+    - dónde encuentro el formato de la memoria de tesis
+    - me puedes pasar el formato de la memoria de tesis
+    - cómo es la estructura de la memoria de tesis
+    - existe una plantilla para la memoria de tesis
+    - pásame el formato oficial de la memoria de tesis
+    - cuál es la plantilla para la memoria de tesis
+    - dónde descargo el formato de memoria de tesis
+    - qué formato debo usar para la memoria de tesis
+    - compárteme la plantilla de memoria de tesis
+    - dónde está el formato oficial de memoria de tesis
+    - me puedes enviar el formato de memoria de tesis
+    - cuál es el documento base para la memoria de tesis
+    - hay un formato para la memoria de tesis
+
 - intent: artefactos_scrum
   examples: |
     - ¿Cuáles son los artefactos Scrum?
     - ¿Qué artefactos se usan en Scrum?
     - artefactos del curso
     - ¿qué entregables son parte de Scrum?
+    - ¿hay formatos para los artefactos Scrum?
+    - necesito la plantilla del Product Backlog
+    - ¿dónde encuentro los artefactos para completar?
+    - me piden los formatos Scrum, ¿dónde los descargo?
+    - ¿qué documentos tengo que entregar en cada sprint?
+    - ¿puedes darme los formatos de artefactos?
+    - ¿hay una estructura oficial para los artefactos Scrum?
+    - ¿dónde están los archivos de los artefactos?
+    - ¿cuál es el entregable final del Sprint?
+
 - intent: planner_tp1
   examples: |
-    - Explica el cronograma del TP1
-    - ¿Cómo se organiza el TP1?
-    - etapas del TP1
-    - planner TP1
-    - calendario TP1
+    - ¿Dónde veo el planner de TP1?
+    - necesito el planner del Taller de Proyecto 1
+    - ¿cuáles son las fechas del planner de tp1?
+    - dame el cronograma de TP1 por favor
+    - ¿dónde está el plan de actividades del TP1?
+    - quiero revisar el planner del curso TP1
+    - ¿qué actividades tengo que hacer esta semana en TP1?
+    - me puedes dar el cronograma de entregas de TP1
+    - ¿qué entregables hay en TP1 esta semana?
+    - muéstrame el planner de este ciclo para TP1
+    - necesito ver las fechas importantes de TP1
+    - ¿qué debo entregar en TP1 esta semana?
+    - ¿dónde está el archivo del planner de TP1?
+    - pásame el link del cronograma del Taller de Proyecto 1
+    - quiero saber qué entregas hay en TP1
+    - ¿puedes recordarme qué hay en el planner de TP1?
+    - no encuentro el planner de TP1, ¿me ayudas?
+    - ¿cuál es la programación de entregas del curso TP1?
+    - necesito el calendario del TP1
+
 - intent: planner_tp2
   examples: |
-    - ¿Cómo está organizado el TP2?
-    - cronograma del TP2
-    - resumen del TP2
-    - planner TP2
-    - calendario TP2
+    - ¿Dónde veo el planner de tp2?
+    - necesito el planner del Taller de Proyecto 2
+    - ¿cuáles son las fechas del planner de tp2?
+    - dame el cronograma de tp2 por favor
+    - ¿dónde está el plan de actividades del tp2?
+    - quiero revisar el planner del curso tp2
+    - ¿qué actividades tengo que hacer esta semana en tp2?
+    - me puedes dar el cronograma de entregas de tp2
+    - ¿qué entregables hay en tp2 esta semana?
+    - muéstrame el planner de este ciclo para tp2
+    - necesito ver las fechas importantes de tp2
+    - ¿qué debo entregar en tp2 esta semana?
+    - ¿dónde está el archivo del planner de tp2?
+    - pásame el link del cronograma del Taller de Proyecto 2
+    - quiero saber qué entregas hay en tp2
+    - ¿puedes recordarme qué hay en el planner de tp2?
+    - no encuentro el planner de tp2, ¿me ayudas?
+    - ¿cuál es la programación de entregas del curso tp2?
+    - necesito el calendario del tp2
+
 - intent: contexto_sprint
   examples: |
-    - ¿Qué es un Sprint?
-    - explica sprint
-    - duración del sprint
-    - cómo funciona un sprint
+    - ¿Qué es un sprint en el TP?
+    - no entiendo qué es un sprint en este curso
+    - ¿para qué sirve el sprint en taller de proyecto?
+    - ¿cuánto dura un sprint en el TP?
+    - ¿cómo se trabaja un sprint en el curso?
+    - ¿qué significa sprint en este contexto?
+    - ¿qué entregas hay por sprint?
+    - ¿qué tengo que hacer en cada sprint?
+    - ¿qué actividades corresponden al sprint 4?
+    - ¿cómo se organiza el trabajo por sprint?
+    - ¿cada sprint tiene entregas?
+    - ¿cuántas semanas dura un sprint en TP1?
+    - ¿los sprints son iguales que en Scrum?
+    - ¿hay sustento al final del sprint?
+    - ¿cómo me ayudan los sprints en el proyecto?
+    - ¿el sprint tiene una fecha fija de inicio y fin?
+    - ¿todos los sprints duran lo mismo?
+    - ¿se revisa con el profesor en cada sprint?
+    - ¿por qué usamos sprints en este curso?
+
+- intent: formato_acta_reunion
+  examples: |
+    - necesito el formato de acta de reunión
+    - me puedes pasar el formato de acta
+    - dónde consigo el formato del acta
+    - cómo es el formato de acta de reunión
+    - plantilla de acta de reunión
+    - requiero el formato de reunión
+    - cuál es el formato para el acta
+    - me puedes enviar el formato de reunión
+    - dónde está la plantilla de acta
+    - dame el formato de acta
+    - cómo descargo el formato de acta
+    - existe un formato para el acta de reunión
+    - formato oficial de acta de reunión
+    - formato para acta
+    - me puedes indicar el formato de reunión
+    - qué formato debo usar para el acta
+    - hay un formato para el acta de reunión
+    - compárteme el formato de acta
+    - cómo obtengo el formato de acta de reunión
+    - dónde puedo descargar la plantilla del acta
+
+- intent: objetivos_curso
+  examples: |
+    - dime los objetivos del curso Taller de Proyecto
+    - para qué sirve el curso Taller de Proyecto
+    - qué se aprende en el Taller de Proyecto
+    - qué objetivos tiene el curso Taller de Proyecto
+    - cuál es la meta del curso Taller de Proyecto
+    - cuál es el objetivo principal del Taller de Proyecto
+    - qué se busca con el curso Taller de Proyecto
+    - para qué es el curso Taller de Proyecto
+    - qué competencias se desarrollan en el Taller de Proyecto
+    - objetivos del curso Taller de Proyecto
+    - propósito del curso Taller de Proyecto
+    - en qué me ayuda el curso Taller de Proyecto
+    - qué habilidades obtendré en el Taller de Proyecto
+    - cuáles son las metas del Taller de Proyecto
+    - qué busca el curso Taller de Proyecto
+    - para qué me sirve el curso Taller de Proyecto
+    - qué conocimientos me dará el Taller de Proyecto
+    - qué aprenderemos en el curso Taller de Proyecto
+    - qué logro se espera en el Taller de Proyecto
+    - cuál es la finalidad del curso Taller de Proyecto
+
+- intent: competencias_curso
+  examples: |
+    - dime las competencias del Taller de Proyecto
+    - qué competencias voy a desarrollar en el Taller de Proyecto
+    - cuáles son las competencias que se trabajan en el curso
+    - qué habilidades se adquieren en el Taller de Proyecto
+    - qué competencias específicas voy a aprender
+    - en qué habilidades me voy a fortalecer con este curso
+    - qué competencias se logran al terminar el Taller de Proyecto
+    - competencias que se desarrollan en este curso
+    - qué destrezas obtendré en el Taller de Proyecto
+    - cuáles son las habilidades que se practican aquí
+    - qué competencias generales y específicas se trabajan
+    - qué habilidades desarrolla el curso
+    - cuáles son las competencias clave del Taller de Proyecto
+    - qué competencias me da el curso
+    - en qué habilidades me formaré en el Taller de Proyecto
+    - qué competencias voy a tener al finalizar el curso
+    - habilidades que se trabajan en este curso
+    - qué competencias son parte de este taller
+    - cuáles son las destrezas que obtendré
+    - qué capacidades se fortalecen en el Taller de Proyecto
+
+- intent: horario_curso
+  examples: |
+    - ¿Cuál es el horario del Taller de Proyecto?
+    - ¿Cuántas horas de clase tiene el Taller de Proyecto?
+    - ¿Cuántas sesiones de laboratorio tiene el curso?
+    - dime el horario del Taller de Proyecto
+    - cuál es el horario de clases
+    - cuántas horas dura el curso
+    - cuántas horas de teoría y práctica tiene
+    - cuántas clases a la semana hay
+    - qué días y horas son las clases
+    - en qué horario se dicta el Taller de Proyecto
+    - cuál es la duración del curso
+    - cuántas horas a la semana tiene el taller
+    - cuántas sesiones hay en total
+    - qué días son las sesiones del taller
+    - cuántas horas por sesión dura el curso
+    - cuántas horas son en total
+    - horario de laboratorio del Taller de Proyecto
+    - qué días hay laboratorio
+    - cuántas horas de laboratorio son
+
+- intent: creditos_curso
+  examples: |
+    - dime cuántos créditos tiene el Taller de Proyecto
+    - cuál es la cantidad de créditos del curso
+    - este curso cuántos créditos tiene
+    - cuántos créditos vale el Taller de Proyecto
+    - el taller tiene cuántos créditos
+    - cantidad de créditos del curso
+    - cuántos créditos me da este curso
+    - créditos del Taller de Proyecto
+    - cuántos créditos otorga este curso
+    - cuál es el valor en créditos del taller
+    - cuántos créditos se asignan a este curso
+    - el Taller de Proyecto cuántos créditos representa
+    - cuántos créditos recibo por este curso
+    - créditos que tiene el taller
+    - cuántos créditos corresponden a este curso
+    - cuántos créditos me faltan para completar los talleres
+    - cuántos créditos necesito para terminar este curso
+    - este curso tiene la misma cantidad de créditos que el otro taller
+
+- intent: fechas_entrega
+  examples: |
+    - Cuales son las principales fechas de entrega?
+    - cuáles son las fechas de entrega del curso
+    - dime las fechas de entrega
+    - cuándo debo entregar los trabajos
+    - cuándo son las entregas importantes
+    - qué días tengo que entregar los avances
+    - en qué fechas debo entregar los avances
+    - cuáles son las entregas del taller
+    - fechas de entrega de actividades
+
 - intent: contactar_asesor
   examples: |
     - contactar asesor especializado
     - quiero hablar con el asesor
     - cómo contacto al asesor
-- intent: formato_acta
-  examples: |
-    - formato de acta
-    - dónde está el formato de reunión
-    - acta de reunión
-
-
-# 🔹 ENTIDADES DEFINIDAS (con sinónimos)
-- synonym: Taller de Proyecto I
-  examples: |
-    - TP I
-    - Proyecto I
-    - Taller I
-
-- synonym: Taller de Proyecto II
-  examples: |
-    - TP II
-    - Proyecto II
-    - Taller II
-
-- synonym: Blackboard
-  examples: |
-    - BB
-    - Plataforma Blackboard
-    - Sistema Blackboard
-
-- synonym: Aula Virtual
-  examples: |
-    - AV
-    - Plataforma Virtual
-    - Aula UPC
-
-- synonym: Microsoft Teams
-  examples: |
-    - Teams
-    - MS Teams
-    - Plataforma Teams
-
-- synonym: Trabajo Final
-  examples: |
-    - TF
-    - Informe final
-    - Proyecto final
-
-- synonym: Trabajo Parcial
-  examples: |
-    - TP
-    - Parcial
-    - Evaluación parcial
-
-- synonym: Participación
-  examples: |
-    - PA
-    - Asistencia activa
-    - Interacción en clase
-
-
-# 🔹 LOOKUP TABLES (para mejorar precisión en valores fijos)
-- lookup: nombre_curso
-  examples: |
-    - Taller de Proyecto I
-    - Taller de Proyecto II
-    - TP I
-    - TP II
-    - Proyecto I
-    - Proyecto II
-
-- lookup: tipo_evaluacion
-  examples: |
-    - Trabajo Final
-    - Trabajo Parcial
-    - Participación
-    - Sustentación
-
-- lookup: plataforma
-  examples: |
-    - Blackboard
-    - Aula Virtual
-    - Microsoft Teams
-
-- lookup: rol
-  examples: |
-    - Líder de equipo
-    - Analista
-    - Diseñador
-    - Desarrollador
-    - Tester
-    - Coordinador
-
-- lookup: etapa_proyecto
-  examples: |
-    - Definición de objetivos
-    - Alcance
-    - Plan de trabajo
-    - Diseño
-    - Implementación
-    - Sustentación
-
-- lookup: fecha_entrega
-  examples: |
-    - Semana 9
-    - Semana 15
-    - Semana 16
-    - Plazo final
+        - necesito hablar con un asesor
+    - cómo puedo comunicarme con el asesor
+    - pásame el contacto del asesor
+    - quiero contactar al asesor del curso
+    - me puedes dar el número del asesor
+    - cómo me comunico con mi asesor
+    - dame el contacto del asesor
+    - necesito contactar a mi asesor
+    - quiero hablar con el asesor especializado
+    - cómo localizo al asesor
+    - hay algún asesor disponible para conversar
+    - me puedes poner en contacto con el asesor
+    - cómo ubico al asesor del taller
+    - dame el correo del asesor
+    - cómo le escribo al asesor
+    - necesito ayuda del asesor
+    - cómo puedo hablar con el asesor académico
+    - contactar con el asesor del taller
+    - cómo solicito hablar con el asesor
+    - por favor comunícame con el asesor

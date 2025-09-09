@@ -7,124 +7,10 @@ import json
 import actions
 from .feedback_rag import FeedbackRAG
 
-
 # URLs de las APIs
 DJANGO_TICKET_URL = "http://localhost:8000/api/crear_ticket/"
 GPT_API_URL = "http://localhost:8000/api/gpt_response/" 
 LOG_API = "http://localhost:8000/api/log_mensaje/"
-
-
-class ActionDespedida(Action):
-    def name(self) -> Text:
-        return "action_despedida"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="¡Hasta luego! 😊 Que tengas un excelente día.")
-        return []
-
-class ActionObjetivosCurso(Action):
-    def name(self) -> Text:
-        return "action_objetivos_curso"
-    
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="El Taller de Proyecto busca que desarrolles habilidades para resolver problemas reales aplicando conocimientos de tu carrera.")
-        return []
-  
-class ActionCompetenciasCurso(Action):
-    def name(self) -> Text:
-        return "action_competencias_curso"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="Durante el curso desarrollarás competencias como trabajo en equipo, pensamiento crítico, solución de problemas, y comunicación efectiva.")
-        return []
-
-class ActionHorarioCurso(Action):
-    def name(self) -> Text:
-        return "action_horario_curso"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="El Taller de Proyecto I se dicta en sesiones semanales de 2 a 3 horas, según la sección. Verifica tu horario en el aula virtual.")
-        return []
-
-class ActionCreditosCurso(Action):
-    def name(self) -> Text:
-        return "action_creditos_curso"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="El Taller de Proyecto I y II tienen cada uno 3 créditos académicos.")
-        return []
-
-class ActionFechasEntrega(Action):
-    def name(self) -> Text:
-        return "action_fechas_entrega"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="Las entregas principales son: Trabajo Parcial en semana 9, Trabajo Final en semana 16. Revisa el cronograma en Aula Virtual.")
-        return []
-
-class ActionProblemasTecnicos(Action):
-    def name(self) -> Text:
-        return "action_problemas_tecnicos"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_msg = tracker.latest_message.get("text", "")
-        sender_id = tracker.sender_id
-        data = {"sender_id": sender_id, "message": user_msg}
-        try:
-            requests.post(LOG_API, json=data, timeout=3)
-        except Exception as e:
-            print(f"❌ Error al guardar log: {e}")
-        
-        dispatcher.utter_message(text="Si tienes problemas técnicos, contacta al soporte técnico de la UPC o escribe a soporte@upc.edu.pe. También puedes usar el canal de Teams.")
-        return []
 
 class ActionProcedimientoCambioTitulo(Action):
     def name(self) -> Text:
@@ -158,9 +44,9 @@ class ActionFormatoObjetivosISI(Action):
         dispatcher.utter_message(text="Registra el objetivo general y objetivos específicos para ISI con la siguiente estructura: OBJ1 - Analizar \nOBJ2 - Diseñar \n OBJ3 - Validar \n OBJ4 - Elaborar el Plan de Continuidad.")
         return []
 
-class ActionFormatoObjetivosSW(Action):
+class ActionFormatoObjetivosSWyCC(Action):
     def name(self) -> Text:
-        return "action_formato_objetivosSW"
+        return "action_formato_objetivosSWyCC"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         user_msg = tracker.latest_message.get("text", "")
@@ -171,7 +57,7 @@ class ActionFormatoObjetivosSW(Action):
         except Exception as e:
             print(f"❌ Error al guardar log: {e}")
         
-        dispatcher.utter_message(text="Registra el objetivo general y objetivos específicos para SW con la siguiente estructura: OBJ1 - Analizar \nOBJ2 - Diseñar \n OBJ3 - Desarrollar \n OBJ4 - Validar.")
+        dispatcher.utter_message(text="Registra el objetivo general y objetivos específicos para SW y CC con la siguiente estructura: OBJ1 - Analizar \nOBJ2 - Diseñar \n OBJ3 - Desarrollar \n OBJ4 - Validar.")
         return []
 
 class ActionFormatoMemoriaTesis(Action):
@@ -311,6 +197,87 @@ class ActionFormatoActas(Action):
         
         dispatcher.utter_message(text="Las reuniones con el asesor especializado y el coautor deben evidenciarse dentro del formato de Acta de Reunión. Usa la siguiente estructura https://upcedupe-my.sharepoint.com/:w:/g/personal/u20211c528_upc_edu_pe/ETMTzMQvWB5Nio1wMh-TWwUBD1Ukf8LBVb5xk74n7Mo8nA?e=bxSOJS, recuerda que este documento debe aprobarse por tu asesor/coautor a través del correo institucional.")
         return []
+
+class ActionObjetivosCurso(Action):
+    def name(self) -> Text:
+        return "action_objetivos_curso"
+    
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_msg = tracker.latest_message.get("text", "")
+        sender_id = tracker.sender_id
+        data = {"sender_id": sender_id, "message": user_msg}
+        try:
+            requests.post(LOG_API, json=data, timeout=3)
+        except Exception as e:
+            print(f"❌ Error al guardar log: {e}")
+        
+        dispatcher.utter_message(text="El Taller de Proyecto busca que desarrolles habilidades para resolver problemas reales aplicando conocimientos de tu carrera.")
+        return []
+  
+class ActionCompetenciasCurso(Action):
+    def name(self) -> Text:
+        return "action_competencias_curso"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_msg = tracker.latest_message.get("text", "")
+        sender_id = tracker.sender_id
+        data = {"sender_id": sender_id, "message": user_msg}
+        try:
+            requests.post(LOG_API, json=data, timeout=3)
+        except Exception as e:
+            print(f"❌ Error al guardar log: {e}")
+        
+        dispatcher.utter_message(text="Durante el curso desarrollarás competencias como trabajo en equipo, pensamiento crítico, solución de problemas, y comunicación efectiva.")
+        return []
+
+class ActionHorarioCurso(Action):
+    def name(self) -> Text:
+        return "action_horario_curso"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_msg = tracker.latest_message.get("text", "")
+        sender_id = tracker.sender_id
+        data = {"sender_id": sender_id, "message": user_msg}
+        try:
+            requests.post(LOG_API, json=data, timeout=3)
+        except Exception as e:
+            print(f"❌ Error al guardar log: {e}")
+        
+        dispatcher.utter_message(text="El Taller de Proyecto I se dicta en sesiones semanales de 2 a 3 horas, según la sección. Verifica tu horario en el aula virtual.")
+        return []
+
+class ActionCreditosCurso(Action):
+    def name(self) -> Text:
+        return "action_creditos_curso"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_msg = tracker.latest_message.get("text", "")
+        sender_id = tracker.sender_id
+        data = {"sender_id": sender_id, "message": user_msg}
+        try:
+            requests.post(LOG_API, json=data, timeout=3)
+        except Exception as e:
+            print(f"❌ Error al guardar log: {e}")
+        
+        dispatcher.utter_message(text="De acuerdo al sílabo 2025, los cursos de Taller de Proyecto I y II tienen 5 créditos académicos cada uno.")
+        return []
+
+class ActionFechasEntrega(Action):
+    def name(self) -> Text:
+        return "action_fechas_entrega"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_msg = tracker.latest_message.get("text", "")
+        sender_id = tracker.sender_id
+        data = {"sender_id": sender_id, "message": user_msg}
+        try:
+            requests.post(LOG_API, json=data, timeout=3)
+        except Exception as e:
+            print(f"❌ Error al guardar log: {e}")
+        
+        dispatcher.utter_message(text="Las entregas principales son: Trabajo Parcial en semana 9, Trabajo Final en semana 16. Revisa el cronograma en planner.")
+        return []
+
 
 class ActionContactarAsesorEspecializado(Action):
     def name(self) -> Text:

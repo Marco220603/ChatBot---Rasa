@@ -1,24 +1,24 @@
 version: "3.1"
-
+#nlu_fallback es un intent real generado por FallbackClassifier para cualquier texto
 intents:
+  - cambio_titulo
+  - objetivos_proyectoISI
+  - objetivos_proyectoSW
+  - objetivos_proyectoCC
+  - formato_memoria_tesis
+  - artefactos_scrum
+  - planner_tp1
+  - planner_tp2
+  - contexto_sprint
+  - formato_acta_reunion
   - objetivos_curso
   - competencias_curso
   - horario_curso
   - creditos_curso
   - fechas_entrega
-  - problemas_tecnicos
-  - nlu_fallback
-  - cambio_titulo
-  - objetivos_proyectoISI
-  - objetivos_proyectoSW
-  - despedida
-  - artefactos_scrum
-  - planner_tp1
-  - planner_tp2
-  - contexto_sprint
   - contactar_asesor
-  - formato_acta
-
+  - nlu_fallback
+ 
 slots:
   last_user_message:
     type: text
@@ -30,26 +30,25 @@ slots:
       - type: custom
 
 actions:
-  - action_objetivos_curso
-  - action_competencias_curso
-  - action_horario_curso
-  - action_creditos_curso
-  - action_fechas_entrega
-  - action_problemas_tecnicos
   - action_procedimiento_cambio_titulo
   - action_formato_objetivosISI
-  - action_formato_objetivosSW
+  - action_formato_objetivosSWyCC
   - action_formato_memoria_tesis
   - action_consultar_artefactos_scrum
   - action_explicar_planner_tp1
   - action_explicar_planner_tp2
   - action_contexto_sprint
-  - action_contactar_asesor_especializado
   - action_formato_acta_reunion
+  - action_objetivos_curso
+  - action_competencias_curso
+  - action_horario_curso
+  - action_creditos_curso
+  - action_fechas_entrega
+  - action_contactar_asesor_especializado
   - action_fallback_con_gpt
   - action_verificar_feedback
   - action_consultar_estado_ticket
-  - action_despedida
+
 
 session_config:
   session_expiration_time: 60
