@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+
+- rule: Responder con los objetivos del curso
+  steps:
+  - intent: objetivos_curso
+  - action: action_objetivos_curso
+
+
+- rule: Responder con las competencias del curso
+  steps:
+  - intent: competencias_curso
+  - action: action_competencias_curso
+
+
+- rule: Responder con el horario del curso
+  steps:
+  - intent: horario_curso
+  - action: action_horario_curso
+
+
+- rule: Responder con los créditos del curso
+  steps:
+  - intent: creditos_curso
+  - action: action_creditos_curso
+
+
+- rule: Responder con las fechas de entrega
+  steps:
+  - intent: fechas_entrega
+  - action: action_fechas_entrega
+
+- rule: Activar acción de fallback personalizada
+  steps:
+  - intent: nlu_fallback
+  - action: action_fallback_con_gpt

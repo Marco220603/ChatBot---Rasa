@@ -1,0 +1,82 @@
+[
+  {
+    "text": "¿Cuáles son las habilidades que adquiriré en el Taller de Proyecto I?",
+    "intent": "competencias_curso",
+    "intent_prediction": {
+      "name": "objetivos_curso",
+      "confidence": 0.9978566765785217
+    }
+  },
+  {
+    "text": "¿Cuáles son los días de clase de estos cursos?",
+    "intent": "horario_curso",
+    "intent_prediction": {
+      "name": "objetivos_curso",
+      "confidence": 0.9450923800468445
+    }
+  },
+  {
+    "text": "¿Qué conocimientos adquiriré en el Taller de Proyecto II?",
+    "intent": "objetivos_curso",
+    "intent_prediction": {
+      "name": "competencias_curso",
+      "confidence": 0.9902412295341492
+    }
+  },
+  {
+    "text": "Explica el cronograma del TP1",
+    "intent": "planner_tp1",
+    "intent_prediction": {
+      "name": "fechas_entrega",
+      "confidence": 0.9735522270202637
+    }
+  },
+  {
+    "text": "cronograma del TP2",
+    "intent": "planner_tp2",
+    "intent_prediction": {
+      "name": "fechas_entrega",
+      "confidence": 0.945266604423523
+    }
+  },
+  {
+    "text": "¿Cuáles son los objetivos del curso Taller de Proyecto I?",
+    "intent": "objetivos_curso",
+    "intent_prediction": {
+      "name": "horario_curso",
+      "confidence": 0.9816032648086548
+    }
+  },
+  {
+    "text": "¿Cómo se organiza el TP1?",
+    "intent": "planner_tp1",
+    "intent_prediction": {
+      "name": "planner_tp2",
+      "confidence": 0.7124205827713013
+    }
+  },
+  {
+    "text": "¿Cuál es el horario del Taller de Proyecto I?",
+    "intent": "horario_curso",
+    "intent_prediction": {
+      "name": "objetivos_curso",
+      "confidence": 0.9612473845481873
+    }
+  },
+  {
+    "text": "¿Cuánto dura el Taller de Proyecto I?",
+    "intent": "horario_curso",
+    "intent_prediction": {
+      "name": "objetivos_curso",
+      "confidence": 0.8973959684371948
+    }
+  },
+  {
+    "text": "¿Dónde puedo ver el cronograma del curso?",
+    "intent": "fechas_entrega",
+    "intent_prediction": {
+      "name": "objetivos_curso",
+      "confidence": 0.565258800983429
+    }
+  }
+]

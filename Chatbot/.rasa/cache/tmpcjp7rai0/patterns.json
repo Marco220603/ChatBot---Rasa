@@ -1,0 +1,26 @@
+[
+  {
+    "name": "nombre_curso",
+    "pattern": "(\\bTaller\\ de\\ Proyecto\\ I\\b|\\bTaller\\ de\\ Proyecto\\ II\\b|\\bTP\\ I\\b|\\bTP\\ II\\b|\\bProyecto\\ I\\b|\\bProyecto\\ II\\b)"
+  },
+  {
+    "name": "tipo_evaluacion",
+    "pattern": "(\\bTrabajo\\ Final\\b|\\bTrabajo\\ Parcial\\b|\\bParticipación\\b|\\bSustentación\\b)"
+  },
+  {
+    "name": "plataforma",
+    "pattern": "(\\bBlackboard\\b|\\bAula\\ Virtual\\b|\\bMicrosoft\\ Teams\\b)"
+  },
+  {
+    "name": "rol",
+    "pattern": "(\\bLíder\\ de\\ equipo\\b|\\bAnalista\\b|\\bDiseñador\\b|\\bDesarrollador\\b|\\bTester\\b|\\bCoordinador\\b)"
+  },
+  {
+    "name": "etapa_proyecto",
+    "pattern": "(\\bDefinición\\ de\\ objetivos\\b|\\bAlcance\\b|\\bPlan\\ de\\ trabajo\\b|\\bDiseño\\b|\\bImplementación\\b|\\bSustentación\\b)"
+  },
+  {
+    "name": "fecha_entrega",
+    "pattern": "(\\bSemana\\ 9\\b|\\bSemana\\ 15\\b|\\bSemana\\ 16\\b|\\bPlazo\\ final\\b)"
+  }
+]

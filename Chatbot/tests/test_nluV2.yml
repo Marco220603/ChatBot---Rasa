@@ -1,0 +1,217 @@
+nlu:
+- examples: '- ¿Cuáles son los objetivos del curso [Taller de Proyecto I](nombre_curso)?
+
+    - ¿Qué busca lograr el curso [Taller de Proyecto II](nombre_curso)?
+
+    - ¿Cuál es el propósito de los talleres de proyecto?
+
+    - ¿Qué aprenderé en el [Taller de Proyecto I](nombre_curso)?
+
+    - ¿Qué conocimientos adquiriré en el [Taller de Proyecto II](nombre_curso)?
+
+    '
+  intent: objetivos_curso
+- examples: '- ¿Qué competencias se desarrollan en los talleres de proyecto?
+
+    - ¿Cuáles son las habilidades que adquiriré en el [Taller de Proyecto I](nombre_curso)?
+
+    - ¿Qué competencias específicas se trabajan en el [Taller de Proyecto II](nombre_curso)?
+
+    - ¿Qué nivel de competencias se alcanza en estos cursos?
+
+    - ¿En qué competencias se enfoca el [Taller de Proyecto I](nombre_curso)?
+
+    '
+  intent: competencias_curso
+- examples: '- ¿Cuál es el horario del [Taller de Proyecto I](nombre_curso)?
+
+    - ¿Cuántas horas de clase tiene el [Taller de Proyecto II](nombre_curso)?
+
+    - ¿Cuántas sesiones de laboratorio tiene el curso?
+
+    - ¿Cuánto dura el [Taller de Proyecto I](nombre_curso)?
+
+    - ¿Cuáles son los días de clase de estos cursos?
+
+    '
+  intent: horario_curso
+- examples: '- ¿Cuántos créditos tiene el [Taller de Proyecto I](nombre_curso)?
+
+    - ¿Cuántos créditos necesito para completar estos cursos?
+
+    - ¿El [Taller de Proyecto II](nombre_curso) tiene la misma cantidad de créditos
+    que el I?
+
+    '
+  intent: creditos_curso
+- examples: '- ¿Cuándo es la entrega del [Trabajo Final](tipo_evaluacion)?
+
+    - ¿Cuál es la fecha límite para el [Trabajo Parcial](tipo_evaluacion)?
+
+    - ¿Hasta qué semana puedo presentar [Participación](tipo_evaluacion)?
+
+    - ¿Las fechas de entrega son flexibles?
+
+    - ¿Dónde puedo ver el cronograma del curso?
+
+    '
+  intent: fechas_entrega
+- examples: '- ¿Qué hacer si tengo problemas técnicos en [Blackboard](plataforma)?
+
+    - ¿Cómo reporto un error en [Aula Virtual](plataforma)?
+
+    - ¿Qué pasa si no puedo acceder a la clase virtual?
+
+    - ¿A quién puedo contactar si tengo problemas con [Microsoft Teams](plataforma)?
+
+    '
+  intent: problemas_tecnicos
+- examples: '- título
+
+    - quiero cambiar el título del proyecto
+
+    - cómo cambio el título del proyecto
+
+    - modificar título
+
+    - cambio de título
+
+    '
+  intent: cambio_titulo
+- examples: '- objetivo general de ingeniería de sistemas
+
+    - objetivo general de Ingeniería de Sistemas
+
+    - Objetivo General de Ingeniería de Sistemas
+
+    - obj general isi
+
+    - objetivo general de isi
+
+    - objetivos de isi
+
+    - objetivos de ISI
+
+    - objetivo específicos de ingeniería de sistemas
+
+    - objetivo específicos de Ingeniería de Sistemas
+
+    - Objetivo Específicos de Ingeniería de Sistemas
+
+    - obj específico isi
+
+    - objetivo específico de isi
+
+    - objetivos específicos de isi
+
+    - objetivos específicos de isi
+
+    '
+  intent: objetivos_proyectoISI
+- examples: '- objetivo general de ingeniería de software
+
+    - objetivo general de Ingeniería de Software
+
+    - Objetivo General de Ingeniería de Software
+
+    - obj general sw
+
+    - objetivo general de sw
+
+    - objetivos de sw
+
+    - objetivos de sw
+
+    - objetivo específicos de ingeniería de software
+
+    - objetivo específicos de Ingeniería de Software
+
+    - Objetivo Específicos de Ingeniería de Software
+
+    - obj específico sw
+
+    - objetivo específico de sw
+
+    - objetivos específicos de sw
+
+    - objetivos específicos de sw
+
+    '
+  intent: objetivos_proyectoSW
+- examples: '- adiós
+
+    - gracias, hasta luego
+
+    - nos vemos
+
+    - hasta luego
+
+    - chao
+
+    - bye
+
+    - chau
+
+    '
+  intent: despedida
+- examples: '- ¿Cuáles son los artefactos Scrum?
+
+    - ¿Qué artefactos se usan en Scrum?
+
+    - artefactos del curso
+
+    - ¿qué entregables son parte de Scrum?
+
+    '
+  intent: artefactos_scrum
+- examples: '- Explica el cronograma del TP1
+
+    - ¿Cómo se organiza el TP1?
+
+    - etapas del TP1
+
+    - planner TP1
+
+    - calendario TP1
+
+    '
+  intent: planner_tp1
+- examples: '- ¿Cómo está organizado el TP2?
+
+    - cronograma del TP2
+
+    - resumen del TP2
+
+    - planner TP2
+
+    - calendario TP2
+
+    '
+  intent: planner_tp2
+- examples: '- ¿Qué es un Sprint?
+
+    - explica sprint
+
+    - duración del sprint
+
+    - cómo funciona un sprint
+
+    '
+  intent: contexto_sprint
+- examples: '- contactar asesor especializado
+
+    - quiero hablar con el asesor
+
+    - cómo contacto al asesor
+
+    '
+  intent: contactar_asesor
+- examples: '- formato de acta
+
+    - dónde está el formato de reunión
+
+    - acta de reunión
+
+    '
+  intent: formato_acta
+version: '3.1'
