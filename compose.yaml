@@ -1,0 +1,27 @@
+services:
+  action-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    image: lizzie666/chatbot:rasa-actions-2025-09-14
+    command: rasa run actions --port 5055 --debug
+    platform: linux/amd64
+    ports:
+      - "5055:5055"
+    restart: unless-stopped
+
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lizzie666/chatbot:rasa-2025-09-14
+    command: run --enable-api --port 5005 --cors "*"
+    platform: linux/amd64
+    volumes:
+      # endpoints.yml debe estar en Chatbot/endpoints.yml dentro del contenedor en /app
+      - ./Chatbot/endpoints.yml:/app/endpoints.yml:ro
+    depends_on:
+      - action-server
+    ports:
+      - "5005:5005"
+    restart: unless-stopped

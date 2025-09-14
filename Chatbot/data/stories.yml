@@ -1,0 +1,83 @@
+version: "3.1"
+stories:
+  - story: preguntar_objetivos_curso
+    steps:
+      - intent: objetivos_curso
+      - action: action_objetivos_curso
+
+  - story: preguntar_competencias
+    steps:
+      - intent: competencias_curso
+      - action: action_competencias_curso
+
+  - story: preguntar_horario
+    steps:
+      - intent: horario_curso
+      - action: action_horario_curso
+
+  - story: preguntar_creditos
+    steps:
+      - intent: creditos_curso
+      - action: action_creditos_curso
+
+  - story: preguntar_fechas_entrega
+    steps:
+      - intent: fechas_entrega
+      - action: action_fechas_entrega
+
+  - story: usuario_pregunta_sobre_cambio_titulo
+    steps:
+      - intent: cambio_titulo
+      - action: action_procedimiento_cambio_titulo
+
+  - story: consulta_no_establecida
+    steps:
+      - action: action_fallback_con_gpt
+      - action: action_verificar_feedback
+
+  - story: consulta_sobre_objetivos_ISI
+    steps:
+      - intent: objetivos_proyectoISI
+      - action: action_formato_objetivosISI
+
+  - story: consulta_sobre_objetivos_SW_CC
+    steps:
+      - intent: objetivos_proyectoSW
+      - intent: objetivos_proyectoCC
+      - action: action_formato_objetivosSWyCC
+
+  - story: consultar_artefactos_scrum
+    steps:
+      - intent: artefactos_scrum
+      - action: action_consultar_artefactos_scrum
+
+  - story: explicar_planner_tp1
+    steps:
+      - intent: planner_tp1
+      - action: action_explicar_planner_tp1
+
+  - story: explicar_planner_tp2
+    steps:
+      - intent: planner_tp2
+      - action: action_explicar_planner_tp2
+
+  - story: explicar_contexto_sprint
+    steps:
+      - intent: contexto_sprint
+      - action: action_contexto_sprint
+
+  - story: contactar_asesor
+    steps:
+      - intent: contactar_asesor
+      - action: action_contactar_asesor_especializado
+
+  - story: mostrar_formato_acta
+    steps:
+      - intent: formato_acta_reunion
+      - action: action_formato_acta_reunion
+
+  - story: mostrar_formato_memoria_tesis
+    steps:
+      - intent: formato_memoria_tesis
+      - action: action_formato_memoria_tesis
+
