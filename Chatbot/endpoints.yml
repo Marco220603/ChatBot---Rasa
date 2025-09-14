@@ -1,6 +1,8 @@
 
 #Es la URL donde Rasa busca ejecutar las acciones definidas en actions.py
 action_endpoint:
-  url: "http://localhost:5055/webhook"
+  url: "http://action-server:5055/webhook"
+
+  #url: "http://localhost:5055/webhook"
 
 

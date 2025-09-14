@@ -1,16 +1,15 @@
+import os
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, EventType
 import requests
 import json
-import actions
-from .feedback_rag import FeedbackRAG
 
-# URLs de las APIs
-DJANGO_TICKET_URL = "http://localhost:8000/api/crear_ticket/"
-GPT_API_URL = "http://localhost:8000/api/gpt_response/" 
-LOG_API = "http://localhost:8000/api/log_mensaje/"
+DJANGO_TICKET_URL = os.getenv("DJANGO_TICKET_URL")
+GPT_API_URL=os.getenv("GPT_API_URL")
+LOG_API=os.getenv("LOG_API")
+
 
 class ActionProcedimientoCambioTitulo(Action):
     def name(self) -> Text:
@@ -360,13 +359,7 @@ class ActionResponderConGPT(Action):
         # Paso 2: Obtener contexto si GPT no puede responder directamente
         contexto = ""
         if not gpt_can_answer:
-            print("🔍 Consultando FAISS por contexto adicional...")
-            try:
-                rag = FeedbackRAG()
-                contexto = rag.search(user_message) or ""
-                print(f"🧠 Contexto FAISS: {contexto[:100]}...")
-            except Exception as e:
-                print(f"❌ Error al consultar FAISS: {e}")
+            print("ℹ️ Saltando búsqueda de contexto (FAISS deshabilitado).")
 
         # Paso 3: Enviar a GPT(Error GPT)
         gpt_text = "❌ No puedo responder ahora."
